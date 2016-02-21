@@ -1,0 +1,36 @@
+{
+  "name": "lets-grow",
+  "version": "1.0.0",
+  "description": "An app being built using React listing how to grow a selection of fruit and vegetables in the garden",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --content-base . --history-api-fallback"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesdsmyth/lets-grow.git"
+  },
+  "author": "James Smyth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesdsmyth/lets-grow/issues"
+  },
+  "homepage": "https://github.com/jamesdsmyth/lets-grow",
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "http-server": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^3.1.2",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
