@@ -11,16 +11,15 @@ import Home from './modules/Home'
 import Store from './reducers/CombinedReducer'
 
 render((
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/food" component={Food}>
-                <Route path="/food/:foodName" component={FoodItem} />
+    <Provider store={Store}>
+        <Router history={browserHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/food" component={Food}>
+                    <Route path="/food/:foodName" component={FoodItem} />
+                </Route>
             </Route>
-        </Route>
-    </Router>
+        </Router>
+    </Provider>
 ), document.getElementById('app'))
-
-
-console.log(Store.getState());
