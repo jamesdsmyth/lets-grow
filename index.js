@@ -23,3 +23,8 @@ render((
         </Router>
     </Provider>
 ), document.getElementById('app'))
+
+// To do!
+
+// Got the store working.
+// List all food items out in FoodItem.js Get each object out from store fr each individual page
