@@ -1,11 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import { Provider } from 'react-redux'
+
 import App from './modules/App'
 import About from './modules/About'
 import Food from './modules/Food'
 import FoodItem from './modules/FoodItem'
 import Home from './modules/Home'
+import Store from './reducers/CombinedReducer'
 
 render((
     <Router history={browserHistory}>
@@ -18,3 +21,6 @@ render((
         </Route>
     </Router>
 ), document.getElementById('app'))
+
+
+console.log(Store.getState());
