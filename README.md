@@ -3,7 +3,7 @@ Lets grow
 
 An app being built using React listing how to grow a selection of fruit and vegetables in the garden.
 
-### How to install
+### How to run
 
 1. git clone repo
 2. npm install (to get the node_modules)

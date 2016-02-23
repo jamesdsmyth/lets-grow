@@ -28,3 +28,4 @@ render((
 
 // - Got the store working using Redux.
 // - List all food items out using the template in FoodItem.js. Get each object out from the store for each individual page
+// - For some reason the foodItem page is not being linked to. Get this all hooked up.
