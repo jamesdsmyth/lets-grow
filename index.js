@@ -24,7 +24,7 @@ render((
     </Provider>
 ), document.getElementById('app'))
 
-// To do!
+// To do
 
 // - Got the store working using Redux.
 // - List all food items out using the template in FoodItem.js. Get each object out from the store for each individual page
