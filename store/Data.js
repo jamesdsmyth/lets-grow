@@ -3,12 +3,14 @@ var Data = {
         apples: {
             "name": "apples",
             "type": "fruit",
-            "color": "red"
+            "color": "red",
+            "description": "Apples are grown in the ground"
         },
         carrots: {
             "name": "carrots",
             "type": "vegetables",
-            "color": "orange"
+            "color": "orange",
+            "description": "Carrots are grown in the sky"
         }
     }
 }

@@ -29,4 +29,6 @@ render((
 // - Done - Got the store working using Redux.
 // - Done - List all food items out using the template in FoodItem.js. Get each object out from the store for each individual page
 // - Done - For some reason the foodItem page is not being linked to. Get this all hooked up
-// - Now need to pull in the individual food items instead of all items from within the store. Need to create a reducer for this
+// - Done - Now need to pull in the individual food items instead of all items from within the store. Done by referencing the param in FoodItem.js
+// - Add correct PropType dependancies for both Food and FoodItem
+// - Add a grow button that writes to the store
