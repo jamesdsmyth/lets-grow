@@ -27,6 +27,9 @@ class FoodView extends React.Component {
                 <ul>
                     {foodList}
                 </ul>
+
+                {/* This below shows FoodItem.js if the /:parameter is present eg /carrots */}
+                {this.props.children}
             </div>
         )
     }
