@@ -26,6 +26,7 @@ render((
 
 // To do
 
-// - Got the store working using Redux.
-// - List all food items out using the template in FoodItem.js. Get each object out from the store for each individual page
-// - For some reason the foodItem page is not being linked to. Get this all hooked up.
+// - Done - Got the store working using Redux.
+// - Done - List all food items out using the template in FoodItem.js. Get each object out from the store for each individual page
+// - Done - For some reason the foodItem page is not being linked to. Get this all hooked up
+// - Now need to pull in the individual food items instead of all items from within the store. Need to create a reducer for this
