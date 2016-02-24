@@ -7,16 +7,16 @@ class FoodView extends React.Component {
         var AllFood = this.props.AllFood;
 
         // Creating my food list items as well as a link that takes the user to the individual food item page.
-        var foodList = AllFood.map(function (item) {
-            return <li key={item.name}>
+        var FoodList = Object.keys(AllFood).map(function(key) {
+            return <li key={AllFood[key].name}>
                         <h2>
-                            {item.name}
+                            {AllFood[key].name}
                         </h2>
                         <p>
-                            Link: <Link to={"/food/" + item.name} activeClassName="active">{item.name}</Link>
+                            Link: <Link to={"/food/" + AllFood[key].name} activeClassName="active">{AllFood[key].name}</Link>
                         </p>
                         <p>
-                            Color: {item.color}
+                            Color: {AllFood[key].color}
                         </p>
                     </li>
         });
@@ -25,7 +25,7 @@ class FoodView extends React.Component {
             <div>
                 Food list
                 <ul>
-                    {foodList}
+                    {FoodList}
                 </ul>
 
                 {/* This below shows FoodItem.js if the /:parameter is present eg /carrots */}
