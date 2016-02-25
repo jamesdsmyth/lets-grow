@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
+import transformMonth from '../filters/transformMonth'
+import currentMonth from '../filters/currentMonth'
+
 class FoodItemView extends React.Component {
     render () {
         var FoodItem  = this.props.FoodItem;
@@ -10,9 +13,17 @@ class FoodItemView extends React.Component {
         console.log(FoodItem, FoodItem[param]);
 
         return (
-            <div>
+            <div className={currentMonth(FoodItem[param].monthsActive)}>
                 <h2>{FoodItem[param].name}</h2>
-                <p>{FoodItem[param].description}</p>
+                <p>Color: {FoodItem[param].color}</p>
+                <p>Description: {FoodItem[param].description}</p>
+                <p>Months active:
+                    {
+                        FoodItem[param].monthsActive.map(function(month){
+                            return transformMonth(month)
+                        })
+                    }
+                </p>
             </div>
         )
     }

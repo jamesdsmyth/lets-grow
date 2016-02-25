@@ -33,6 +33,7 @@ render((
 // - Done - List all food items out using the template in FoodItem.js. Get each object out from the store for each individual page
 // - Done - For some reason the foodItem page is not being linked to. Get this all hooked up
 // - Done - Now need to pull in the individual food items instead of all items from within the store. Done by referencing the param in FoodItem.js
-// - Add correct PropType dependancies for both Food and FoodItem
+// - Done - Sass needs to be supported
+// - Done - Months are now listed and if current month is one of the months that food grows in, add certain class
+// - Add some way of displaying when exactly the food should be grown through the months. Needs to be visual
 // - Add a grow button that writes to the store
-// - Sass needs to be supported
