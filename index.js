@@ -1,3 +1,6 @@
+// requiring my styles.scss file to be compiled
+require('./styles/styles.scss');
+
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
@@ -22,7 +25,7 @@ render((
             </Route>
         </Router>
     </Provider>
-), document.getElementById('app'))
+), document.getElementById('lets-grow'))
 
 // To do
 
@@ -32,3 +35,4 @@ render((
 // - Done - Now need to pull in the individual food items instead of all items from within the store. Done by referencing the param in FoodItem.js
 // - Add correct PropType dependancies for both Food and FoodItem
 // - Add a grow button that writes to the store
+// - Sass needs to be supported
