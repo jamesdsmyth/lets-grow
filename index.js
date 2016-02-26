@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 import App from './modules/App'
 import About from './modules/About'
 import Food from './modules/Food'
-import FoodItem from './modules/FoodItem'
+import FoodItemComponent from './modules/FoodItemComponent'
 import Home from './modules/Home'
 import Store from './reducers/CombinedReducer'
 
@@ -20,12 +20,16 @@ render((
                 <IndexRoute component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/food" component={Food}>
-                    <Route path="/food/:foodName" component={FoodItem} />
+                    <Route path="/food/:foodName" component={FoodItemComponent} />
                 </Route>
             </Route>
         </Router>
     </Provider>
 ), document.getElementById('lets-grow'))
+
+// Hierarchy
+
+
 
 // To do
 
