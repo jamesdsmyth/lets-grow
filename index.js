@@ -27,9 +27,6 @@ render((
     </Provider>
 ), document.getElementById('lets-grow'))
 
-// Hierarchy
-
-
 
 // To do
 

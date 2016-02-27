@@ -1,7 +1,10 @@
+@import "./_colors.scss";
+@import "./reset.scss";
+
 #lets-grow {
     width: 1000px;
     margin: 0 auto;
-    background: #dedede;
+    background: $primary-background;
 
     .in-season {
         background: #52c152;
@@ -9,5 +12,15 @@
 
     .not-in-season {
         background: #e53232;
+    }
+
+    .calendar {
+        width: 100%;
+
+        li {
+            float: left;
+            display: block;
+            width: 8.33%;
+        }
     }
 }

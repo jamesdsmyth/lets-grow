@@ -29,7 +29,7 @@ class FoodItem extends React.Component {
                 <h1>{FoodItem[foodParam].name}</h1>
                 <p>Color: {FoodItem[foodParam].color}</p>
                 <p>Description: {FoodItem[foodParam].description}</p>
-                <ul>
+                <ul className="calendar">
                     {list}
                 </ul>
             </div>
