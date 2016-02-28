@@ -1,17 +1,41 @@
 @import "./_colors.scss";
 @import "./reset.scss";
 
+html {
+    font-size: 1em;
+    font-family: arial, sans-serif;
+    color: $primary-type;
+}
+
 #lets-grow {
     width: 1000px;
     margin: 0 auto;
     background: $primary-background;
 
+    h1 {
+        font-size: 2em;
+        text-transform: capitalize;
+    }
+
     .in-season {
-        background: #52c152;
+        background: $in-season-background;
     }
 
     .not-in-season {
-        background: #e53232;
+        background: $not-in-season-background;
+    }
+
+    .food-item {
+
+        header {
+            height: 150px;
+            background: pink;
+
+            h1 {
+                text-align: center;
+                line-height: 150px;
+            }
+        }
     }
 
     .calendar {
@@ -21,6 +45,16 @@
             float: left;
             display: block;
             width: 8.33%;
+            height: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            border-right: 1px solid $white;
+            color: $white;
+            line-height: 40px;
+
+            &:last-child {
+                border-right: 0;
+            }
         }
     }
 }

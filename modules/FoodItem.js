@@ -6,6 +6,12 @@ import transformMonth from '../filters/transformMonth'
 import currentMonth from '../filters/currentMonth'
 
 class FoodItem extends React.Component {
+
+    growClick () {
+        // need to add
+        console.log('clicked the grow button')
+    }
+
     render () {
         var FoodItem  = this.props.state;
         var foodParam = this.props.param;
@@ -25,14 +31,17 @@ class FoodItem extends React.Component {
         });
 
         return (
-            <div>
-                <h1>{FoodItem[foodParam].name}</h1>
-                <p>Color: {FoodItem[foodParam].color}</p>
-                <p>Description: {FoodItem[foodParam].description}</p>
+            <section className="food-item">
+                <header>
+                    <h1>{FoodItem[foodParam].name}</h1>
+                </header>
                 <ul className="calendar">
                     {list}
                 </ul>
-            </div>
+                <p>Color: {FoodItem[foodParam].color}</p>
+                <p>Description: {FoodItem[foodParam].description}</p>
+                <button type="button" className="grow-me" onClick={this.growClick}>Grow me</button>
+            </section>
         )
     }
 }
