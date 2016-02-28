@@ -7,22 +7,21 @@ import currentMonth from '../filters/currentMonth'
 
 class FoodItem extends React.Component {
 
-    growClick () {
-        // need to add
-        console.log('clicked the grow button')
-    }
-
     render () {
+        const { store } = this.context;
+        const state = store.getState();
+        // console.log('breshhhhhhh', state);
+
         var FoodItem  = this.props.state;
         var foodParam = this.props.param;
+
+        console.log(FoodItem);
 
         // map function to loop through each object item and get the key and value.
         var list = Object.keys(FoodItem[foodParam].monthsActive).map(function(month) {
 
             // month returns 'January true'
             // FoodItem[foodParam].monthsActive[month] returns the value true or false
-            console.log(month, FoodItem[foodParam].monthsActive[month]);
-
             // 'inSeason' is either true or false
             var inSeason = FoodItem[foodParam].monthsActive[month];
             var type = inSeason == true ? 'in-season' : 'not-in-season';
@@ -40,10 +39,13 @@ class FoodItem extends React.Component {
                 </ul>
                 <p>Color: {FoodItem[foodParam].color}</p>
                 <p>Description: {FoodItem[foodParam].description}</p>
-                <button type="button" className="grow-me" onClick={this.growClick}>Grow me</button>
             </section>
         )
     }
+}
+
+FoodItem.contextTypes = {
+    store: React.PropTypes.object
 }
 
 export default FoodItem
