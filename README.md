@@ -22,3 +22,15 @@ Quick breakdown of the main files and how `react-router` and `react-redux` live 
   * `Food.js` - a container that lists all available foods and links to individual foods. As this contains children in the `react-router` tree, it contains the `{this.props.children}` with will look out for parameters on the url that matches the fruit that is in the store and link to the correct food item via the `FoodItemComponent.js`
   * `FoodItemComponent.js` - contains the store and checks the param that it is passed. It gets the correct food from the store and passes it to the `FoodItem.js` which renders the food item
   * `FoodItem.js` - a presentational component that takes parameters and displays the correct food item
+
+### Tips
+
+To use the handy es6 object spread especially when returning the state, you need to include the following in your package.json file. Find out more - [babel object rest spread] (https://babeljs.io/docs/usage/babelrc/)
+
+But first `npm install babel-plugin-transform-object-rest-spread`
+
+  `"babel": {
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }`

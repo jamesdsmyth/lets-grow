@@ -11,7 +11,7 @@ class FoodItemComponentView extends React.Component {
     clickingSpan (word) {
         this.props.dispatch({
             type: 'TO_DO',
-            name: 'this is new textttttt'
+            name: word
         })
     }
     render () {

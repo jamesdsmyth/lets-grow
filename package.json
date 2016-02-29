@@ -16,6 +16,11 @@
     "url": "https://github.com/jamesdsmyth/lets-grow/issues"
   },
   "homepage": "https://github.com/jamesdsmyth/lets-grow",
+  "babel": {
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
   "dependencies": {
     "react": "^0.14.7",
     "react-dom": "^0.14.7",

@@ -7,8 +7,10 @@ var FoodStore = (state = Data.food, action) => {
 
         case 'TO_DO':
             return {
-                state,
-                time: 'THIS IS THE NEW TIME'
+                ...state,
+                apples: {
+                    name: 'THIS IS THE NEW TIME'
+                }
             }
     }
     return state;
