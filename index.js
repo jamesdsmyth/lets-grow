@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 import App from './modules/App'
 import About from './modules/About'
 import Food from './modules/Food'
-import FoodItemComponent from './modules/FoodItemComponent'
+import FoodItemContainer from './containers/FoodItemContainer'
 import Home from './modules/Home'
 import Store from './reducers/CombinedReducer'
 
@@ -20,7 +20,7 @@ render((
                 <IndexRoute component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/food" component={Food}>
-                    <Route path="/food/:foodName" component={FoodItemComponent} />
+                    <Route path="/food/:foodName" component={FoodItemContainer} />
                 </Route>
             </Route>
         </Router>
@@ -37,4 +37,5 @@ render((
 // - Done - Sass needs to be supported
 // - Done - Months are now listed and if current month is one of the months that food grows in, add certain class
 // - Partially done - Add some way of displaying when exactly the food should be grown through the months. Needs to be visual
-// - Add a grow button that writes to the store
+// - Partially done - Add a grow button that writes to the store. This currently writes to the store but only for apples!
+// ...needs to pass back the food name. Currently doesnt pass this back. Also need to work out how to onlytarget that food in the reducer

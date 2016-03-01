@@ -1,8 +1,10 @@
 import Data from '../store/Data'
 
-var FoodStore = (state = Data.food, action) => {
+var FoodReducer = (state = Data.food, action) => {
     console.log('reducer called with state ', state , ' and action ', action);
 
+    var foodItem = action.food;
+    console.log(foodItem)
     switch (action.type) {
 
         case 'START_GROWING':
@@ -18,4 +20,4 @@ var FoodStore = (state = Data.food, action) => {
     }
 }
 
-export default FoodStore
+export default FoodReducer

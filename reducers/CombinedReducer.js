@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from 'redux'
 
-import FoodStore from '../reducers/FoodStore'
+import FoodReducer from '../reducers/FoodReducer'
 
 var Reducer = combineReducers({
-    FoodState: FoodStore
+    FoodState: FoodReducer
 })
 
 let Store = createStore(Reducer);
