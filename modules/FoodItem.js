@@ -10,7 +10,6 @@ class FoodItem extends React.Component {
     render () {
         const { store } = this.context;
         const state = store.getState();
-        // console.log('breshhhhhhh', state);
 
         var FoodItem  = this.props.state;
         var foodParam = this.props.param;
@@ -29,9 +28,13 @@ class FoodItem extends React.Component {
             return <li key={month} className={type}>{month}</li>
         });
 
+        var headerStyle = {
+            backgroundImage: 'url(' + FoodItem[foodParam].backgroundImage + ')'
+        };
+
         return (
             <section className="food-item">
-                <header>
+                <header style={headerStyle}>
                     <h1>{FoodItem[foodParam].name}</h1>
                 </header>
                 <ul className="calendar">

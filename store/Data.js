@@ -5,6 +5,7 @@ var Data = {
             "type": "fruit",
             "color": "red",
             "description": "Apples are grown in the ground",
+            "backgroundImage": "../images/apples.jpg",
             "monthsActive": {
                 "January": false,
                 "February": false,
@@ -25,6 +26,7 @@ var Data = {
             "type": "vegetables",
             "color": "orange",
             "description": "Carrots are grown in the sky",
+            "backgroundImage": "../images/carrots.jpg",
             "monthsActive": {
                 "January": true,
                 "February": true,

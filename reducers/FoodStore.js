@@ -5,15 +5,17 @@ var FoodStore = (state = Data.food, action) => {
 
     switch (action.type) {
 
-        case 'TO_DO':
-            return {
-                ...state,
+        case 'START_GROWING':
+            return {...state,
                 apples: {
-                    name: 'THIS IS THE NEW TIME'
+                    ...state.apples,
+                    startedGrowing: action.time
                 }
             }
+        break;
+        default:
+            return state;
     }
-    return state;
 }
 
 export default FoodStore

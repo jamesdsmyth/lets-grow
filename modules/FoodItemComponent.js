@@ -8,10 +8,20 @@ import currentMonth from '../filters/currentMonth'
 
 class FoodItemComponentView extends React.Component {
 
-    clickingSpan (word) {
+    clickingSpan () {
+        var date = new Date();
+        var time = date.getTime();
         this.props.dispatch({
-            type: 'TO_DO',
-            name: word
+            type: 'START_GROWING',
+            time: time
+        })
+    }
+    clickingAnotherSpan () {
+        var date = new Date();
+        var time = date.getTime();
+        this.props.dispatch({
+            type: 'START_GROWINGYEHHHH',
+            time: time
         })
     }
     render () {
@@ -25,7 +35,8 @@ class FoodItemComponentView extends React.Component {
         // console.log(FoodItem, FoodItem[param]);
         return (
             <div>
-            <span onClick={() => this.clickingSpan('hiyaaaaa')}>CLICK ME YEHHHH</span>
+            <span onClick={() => this.clickingSpan()}>TEST CLICK</span>
+            <span onClick={() => this.clickingAnotherSpan()}>Another CLICK</span>
             <FoodItem param={param} state={FoodItemState} />
             </div>
         )

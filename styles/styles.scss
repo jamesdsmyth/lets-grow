@@ -29,7 +29,9 @@ html {
 
         header {
             height: 150px;
-            background: pink;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
 
             h1 {
                 text-align: center;
