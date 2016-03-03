@@ -34,7 +34,7 @@ class FoodItem extends React.Component {
                 <ul className="calendar">
                     {list}
                 </ul>
-                <span onClick={() => growClick(FoodItem.name)}>Start growing!!!</span>
+                <span onClick={growClick}>Start growing this item</span>
                 <p>Color: {FoodItem.color}</p>
                 <p>Description: {FoodItem.description}</p>
                 <p>Time added: {FoodItem.startedGrowing}</p>

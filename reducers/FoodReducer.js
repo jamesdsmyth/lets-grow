@@ -8,13 +8,14 @@ var FoodReducer = (state = Data.food, action) => {
     switch (action.type) {
 
         case 'START_GROWING':
-            return {...state,
-                apples: {
-                    ...state.apples,
-                    startedGrowing: action.time
-                }
+            let newState = Object.assign({}, state);
+
+            newState[action.food] = {
+                ...state[action.food],
+                startedGrowing: action.time
             }
-        break;
+
+            return newState
         default:
             return state;
     }

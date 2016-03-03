@@ -17,7 +17,7 @@ class FoodItemContainerView extends React.Component {
         var FoodItemState  = this.props.FoodItem[param]; // getting the food state from the reducer
 
         return (
-            <FoodItem state={FoodItemState} growClick={() => this.startGrowingClick()} />
+            <FoodItem state={FoodItemState} growClick={() => this.startGrowingClick(param)} />
         )
     }
 }
