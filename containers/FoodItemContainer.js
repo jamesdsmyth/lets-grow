@@ -12,12 +12,20 @@ class FoodItemContainerView extends React.Component {
         this.props.dispatch(actions.startGrowingCreator(foodName));
     }
 
+    stopGrowingClick (foodName) {
+        this.props.dispatch(actions.stopGrowingCreator(foodName));
+    }
+
     render () {
         var param = this.props.params.foodName; // getting the food param from the url
         var FoodItemState  = this.props.FoodItem[param]; // getting the food state from the reducer
 
         return (
-            <FoodItem state={FoodItemState} growClick={() => this.startGrowingClick(param)} />
+            <FoodItem
+                state={FoodItemState}
+                growClick={() => this.startGrowingClick(param)}
+                stopGrowClick={() => this.stopGrowingClick(param)}
+            />
         )
     }
 }

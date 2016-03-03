@@ -37,5 +37,4 @@ render((
 // - Done - Sass needs to be supported
 // - Done - Months are now listed and if current month is one of the months that food grows in, add certain class
 // - Partially done - Add some way of displaying when exactly the food should be grown through the months. Needs to be visual
-// - Partially done - Add a grow button that writes to the store. This currently writes to the store but only for apples!
-// ...needs to pass back the food name. Currently doesnt pass this back. Also need to work out how to onlytarget that food in the reducer
+// - Partially done - Add a grow button that writes to the store. Added the start and stop reducers

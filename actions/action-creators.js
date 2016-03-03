@@ -7,3 +7,13 @@ export function startGrowingCreator(foodName) {
         time: time
     }
 }
+
+export function stopGrowingCreator(foodName) {
+    var date = new Date();
+    var time = date.getTime();
+    return {
+        type: 'STOP_GROWING',
+        food: foodName,
+        time: time
+    }
+}

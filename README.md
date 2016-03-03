@@ -22,6 +22,8 @@ Quick breakdown of the main files and how `react-router` and `react-redux` live 
   * `Food.js` - a container that lists all available foods and links to individual foods. As this contains children in the `react-router` tree, it contains the `{this.props.children}` with will look out for parameters on the url that matches the fruit that is in the store and link to the correct food item via the `FoodItemContainer.js`
   * `FoodItemContainer.js` - contains the store and checks the param that it is passed. It gets the correct food from the store and passes it to the `FoodItem.js` which renders the food item
   * `FoodItem.js` - a presentational component that takes parameters and displays the correct food item
++ `action-creators.js` - These functions create an object ready to be dispatched to the reducers
++ `currentMonth.js` - Function that returns the correct class regarding whether that food is in season or not. This is linked to the calendar visual on the foodItem page
 
 ### Tips
 
