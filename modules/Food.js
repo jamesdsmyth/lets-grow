@@ -22,7 +22,7 @@ class FoodView extends React.Component {
                     {FoodList}
                 </ul>
 
-                {/* This below shows FoodItem.js if the /:parameter is present eg /carrots */}
+                {/* This below shows FoodItemContainer.js if the /:parameter is present eg /carrots */}
                 {this.props.children}
             </div>
         )

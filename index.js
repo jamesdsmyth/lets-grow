@@ -7,7 +7,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { Provider } from 'react-redux'
 
 import App from './modules/App'
-import About from './modules/About'
+import MyGardenContainer from './containers/MyGardenContainer'
 import Food from './modules/Food'
 import FoodItemContainer from './containers/FoodItemContainer'
 import Home from './modules/Home'
@@ -18,7 +18,7 @@ render((
         <Router history={browserHistory}>
             <Route path="/" component={App}>
                 <IndexRoute component={Home} />
-                <Route path="/about" component={About} />
+                <Route path="/my-garden" component={MyGardenContainer} />
                 <Route path="/food" component={Food}>
                     <Route path="/food/:foodName" component={FoodItemContainer} />
                 </Route>
@@ -38,3 +38,4 @@ render((
 // - Done - Months are now listed and if current month is one of the months that food grows in, add certain class
 // - Partially done - Add some way of displaying when exactly the food should be grown through the months. Needs to be visual
 // - Partially done - Add a grow button that writes to the store. Added the start and stop reducers
+// - List all currently growing plants in the 'my garden' tab

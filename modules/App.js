@@ -10,7 +10,7 @@ export default React.createClass({
                     <IndexLink to="/" activeClassName="active">Home</IndexLink>
                 </li>
                 <li>
-                    <Link to="/about" activeClassName="active">About</Link>
+                    <Link to="/my-garden" activeClassName="active">My Garden</Link>
                 </li>
                 <li>
                     <Link to="/food" activeClassName="active">Food</Link>

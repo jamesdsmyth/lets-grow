@@ -27,12 +27,18 @@ Quick breakdown of the main files and how `react-router` and `react-redux` live 
 
 ### Tips
 
-To use the handy es6 object spread especially when returning the state, you need to include the following in your package.json file. Find out more - [babel object rest spread] (https://babeljs.io/docs/usage/babelrc/)
+To use the es6 object spread especially when returning the state, you need to include the following in your package.json file. Find out more - [babel object rest spread] (https://babeljs.io/docs/usage/babelrc/)
 
 But first `npm install babel-plugin-transform-object-rest-spread`
+
+then in the `package.json` add an entry for `babel`
 
   `"babel": {
     "plugins": [
       "transform-object-rest-spread"
     ]
   }`
+
+### Future
+
+Create a store using Firebase to allow the data to persist, especially when you have started to grow the plants!

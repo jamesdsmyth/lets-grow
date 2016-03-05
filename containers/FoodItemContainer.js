@@ -8,17 +8,18 @@ import * as actions from '../actions/action-creators'
 class FoodItemContainerView extends React.Component {
 
     startGrowingClick (foodName) {
-        console.log('the food name is', foodName)
+        console.log('click to start growing', foodName)
         this.props.dispatch(actions.startGrowingCreator(foodName));
     }
 
     stopGrowingClick (foodName) {
+        console.log('click to stop growing', foodName);
         this.props.dispatch(actions.stopGrowingCreator(foodName));
     }
 
     render () {
         var param = this.props.params.foodName; // getting the food param from the url
-        var FoodItemState  = this.props.FoodItem[param]; // getting the food state from the reducer
+        var FoodItemState  = this.props.Food[param]; // getting the state from the reducer and just saving the individual foodItem
 
         return (
             <FoodItem
@@ -34,7 +35,7 @@ class FoodItemContainerView extends React.Component {
 // Just testing but below can return multiple states depending on what I want to get.
 const mapStateToProps = (State) => {
     return {
-        FoodItem: State.FoodState
+        Food: State.FoodState
     }
 }
 
