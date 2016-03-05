@@ -18,9 +18,9 @@ Quick breakdown of the main files and how `react-router` and `react-redux` live 
 + `index.js` - contains initialization of the react-router
   * `App.js` - wraps the application in a layer that contains the top level navigation and all state changes occur while wrapped in this layer using `{this.props.children}`
   * `Home.js` - the default page for when the application is at `/`
-  * `About.js` - stand alone page describing generic stuff about why I am making this application!
-  * `Food.js` - a container that lists all available foods and links to individual foods. As this contains children in the `react-router` tree, it contains the `{this.props.children}` with will look out for parameters on the url that matches the fruit that is in the store and link to the correct food item via the `FoodItemContainer.js`
-  * `FoodItemContainer.js` - contains the store and checks the param that it is passed. It gets the correct food from the store and passes it to the `FoodItem.js` which renders the food item
+  * `MyGardenContainer.js` (my garden) - contains each food item that is currently being grown
+  * `FoodContainer.js` (food) - a container that lists all available foods and links to individual foods. As this contains children in the `react-router` tree, it contains the `{this.props.children}` with will look out for parameters on the url that matches the fruit that is in the store and link to the correct food item via the `FoodItemContainer.js`
+  * `FoodItemContainer.js` (eg. food/carrots) - contains the store and checks the param that it is passed. It gets the correct food from the store and passes it to the `FoodItem.js` which renders the food item
   * `FoodItem.js` - a presentational component that takes parameters and displays the correct food item
 + `action-creators.js` - These functions create an object ready to be dispatched to the reducers
 + `currentMonth.js` - Function that returns the correct class regarding whether that food is in season or not. This is linked to the calendar visual on the foodItem page
@@ -41,4 +41,4 @@ then in the `package.json` add an entry for `babel`
 
 ### Future
 
-Create a store using Firebase to allow the data to persist, especially when you have started to grow the plants!
+Create a store using Firebase to which would then allow users to create an account, login and check their currently growing items.

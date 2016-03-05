@@ -6,11 +6,11 @@ import { render } from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { Provider } from 'react-redux'
 
-import App from './modules/App'
+import App from './views/App'
 import MyGardenContainer from './containers/MyGardenContainer'
-import Food from './modules/Food'
+import FoodContainer from './containers/FoodContainer'
 import FoodItemContainer from './containers/FoodItemContainer'
-import Home from './modules/Home'
+import Home from './views/Home'
 import Store from './reducers/CombinedReducer'
 
 render((
@@ -19,13 +19,13 @@ render((
             <Route path="/" component={App}>
                 <IndexRoute component={Home} />
                 <Route path="/my-garden" component={MyGardenContainer} />
-                <Route path="/food" component={Food}>
+                <Route path="/food" component={FoodContainer}>
                     <Route path="/food/:foodName" component={FoodItemContainer} />
                 </Route>
             </Route>
         </Router>
     </Provider>
-), document.getElementById('lets-grow'))
+), document.getElementById('lets-grow'));
 
 
 // To do
@@ -38,4 +38,5 @@ render((
 // - Done - Months are now listed and if current month is one of the months that food grows in, add certain class
 // - Partially done - Add some way of displaying when exactly the food should be grown through the months. Needs to be visual
 // - Partially done - Add a grow button that writes to the store. Added the start and stop reducers
-// - List all currently growing plants in the 'my garden' tab
+// - Partially done - List all currently growing plants in the 'my garden' tab
+// - Add moment.js and have readable times being displayed

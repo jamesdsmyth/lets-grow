@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
-import FoodItem from '../modules/FoodItem'
+import FoodItem from '../views/FoodItem'
 import * as actions from '../actions/action-creators'
 
 class FoodItemContainerView extends React.Component {

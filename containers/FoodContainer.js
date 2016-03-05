@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
-class FoodView extends React.Component {
+class FoodContainerView extends React.Component {
     render () {
         var AllFood = this.props.AllFood;
 
@@ -37,8 +37,8 @@ const mapStateToProps = (State) => {
 }
 
 // Need to mapStateToProps to use this up in the FoodView
-const Food = connect(
+const FoodContainer = connect(
     mapStateToProps
-)(FoodView)
+)(FoodContainerView)
 
-export default Food
+export default FoodContainer

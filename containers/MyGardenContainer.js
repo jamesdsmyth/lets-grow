@@ -6,20 +6,33 @@ import * as actions from '../actions/action-creators'
 
 class MyGardenContainerView extends React.Component {
     render () {
+        var AllFood = this.props.AllFood;
+
+        // getting all food items that have started growing.
+        // I need to create a different list
+        var touchedFoodList = Object.keys(AllFood).map(function (key) {
+            console.log(AllFood[key].isGrowing)
+            if(AllFood[key].isGrowing === true) {
+                return <li key={AllFood[key].name}>
+                        {AllFood[key].name}
+                    </li>
+            }
+        });
+
         return (
             <div>
                 My Garden
-                <p>Now need to list the saved items that I am growing.</p>
-                <p>Could get back all the food again, do a foreach and list everything that has a value for the key 'isGrowing'</p>
-                <p>This would then make this a container</p>
+                <ul>
+                    {touchedFoodList}
+                </ul>
             </div>
         )
     }
 }
 
-const mapStateToProps = () => {
+const mapStateToProps = (State) => {
     return {
-        Food: State.FoodState
+        AllFood: State.FoodState
     }
 }
 

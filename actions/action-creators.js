@@ -4,6 +4,7 @@ export function startGrowingCreator(foodName) {
     return {
         type: 'START_GROWING',
         food: foodName,
+        isGrowing: true,
         time: time
     }
 }
