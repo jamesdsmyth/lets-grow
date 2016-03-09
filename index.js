@@ -39,4 +39,4 @@ render((
 // - Partially done - Add some way of displaying when exactly the food should be grown through the months. Needs to be visual
 // - Partially done - Add a grow button that writes to the store. Added the start and stop reducers
 // - Partially done - List all currently growing plants in the 'my garden' tab
-// - Add moment.js and have readable times being displayed
+// - Partially done - Add moment.js and have readable times being displayed. Added the package, now getting to format the dates

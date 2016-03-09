@@ -12,10 +12,23 @@ class MyGardenContainerView extends React.Component {
         // I need to create a different list
         var touchedFoodList = Object.keys(AllFood).map(function (key) {
             console.log(AllFood[key].isGrowing)
+
+
+
             if(AllFood[key].isGrowing === true) {
+
+
+                var startedGrowingLive = setTimeout(function () {
+                    actions.updateTime(AllFood[key].startedGrowing)
+                }, 1000);
+
+
+
+
                 return <li key={AllFood[key].name}>
-                        {AllFood[key].name}
-                    </li>
+                            <h3>{AllFood[key].name}</h3>
+                            <p>Started growing: {startedGrowingLive}</p>
+                        </li>
             }
         });
 
