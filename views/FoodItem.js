@@ -8,6 +8,7 @@ class FoodItem extends React.Component {
 
     render () {
         var FoodItem  = this.props.state; // passing the state from FoodItemContainer
+        console.log(FoodItem);
         var growClick = this.props.growClick; // passing the click event from FoodItemContainer
         var stopGrowClick = this.props.stopGrowClick
         // map function to loop through each object item and get the key and value.
@@ -34,8 +35,8 @@ class FoodItem extends React.Component {
                 <ul className="calendar">
                     {list}
                 </ul>
-                <span onClick={growClick}>Start growing this item</span>
-                <span onClick={stopGrowClick}>Stop growing this item</span>
+                <button type="click" onClick={growClick}>Grow!</button>
+                <button type="click" onClick={stopGrowClick}>Stop growing</button>
                 <p>Color: {FoodItem.color}</p>
                 <p>Description: {FoodItem.description}</p>
                 <p>Started growing on: {FoodItem.startedGrowing}</p>

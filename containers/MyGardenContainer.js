@@ -17,42 +17,30 @@ class MyGardenContainerView extends React.Component {
             if(AllFood[key].isGrowing === true) {
 
                 var startTime = AllFood[key].startedGrowing;
-                var continuedTime = startTime;
-                var latestTime = null;
+                var diff,duration,momentObj,incrementOneSecond;
 
-
-
-                // didnt even think. I don't even need this. All I need is the start time and a time.
-                // incrementOneSecond();
-                // function incrementOneSecond () {
-                //     setTimeout(function () {
-                //         latestTime = moment(continuedTime).add(1, 'second')//;.format();
-                //         continuedTime = latestTime;
-                //
-                //         console.log(moment(latestTime).format());
-                //         incrementOneSecond();
-                //     }, 1000);
-                // }
-
-                var startCount = 0;
-                var continuedCount = startCount;
-                var latestCount = startCount;
-
-                incrementOneSecond();
-                function incrementOneSecond () {
+                var incrementOneSecond = function () {
                     setTimeout(function () {
-                        latestCount = moment(continuedCount).add(1, 'second')//;.format();
-                        continuedCount = latestCount;
+                        diff = moment().diff(startTime);
+                        var dcdcdc = moment.duration(diff).humanize();
+                        momentObj = moment(diff);
+                        console.log(diff, dcdcdc, momentObj)
 
-                        console.log(moment(startCount).format());
+                        {duration}
                         incrementOneSecond();
+                        return dcdcdc;
                     }, 1000);
                 }
 
                 return <li key={AllFood[key].name}>
                             <h3>{AllFood[key].name}</h3>
-                            <p>Started growing at: {startCount}</p>
-                            <p>Has been growing for </p>
+                            <p>Started growing at: {startTime}</p>
+
+                            <p>duration issssssaa
+
+
+                                {incrementOneSecond()}
+                            </p>
                         </li>
             }
         });

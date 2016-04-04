@@ -18,7 +18,8 @@ export function startGrowingCreator(foodName) {
         type: 'START_GROWING',
         food: foodName,
         isGrowing: true,
-        time: now
+        time: now,
+        timeLength: b
     }
 }
 
