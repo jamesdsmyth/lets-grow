@@ -35,12 +35,14 @@ class FoodItem extends React.Component {
                 <ul className="calendar">
                     {list}
                 </ul>
-                <button type="click" onClick={growClick}>Grow!</button>
-                <button type="click" onClick={stopGrowClick}>Stop growing</button>
+
                 <p>Color: {FoodItem.color}</p>
                 <p>Description: {FoodItem.description}</p>
-                <p>Started growing on: {FoodItem.startedGrowing}</p>
-                <p>Stopped growing on: {FoodItem.stoppedGrowing}</p>
+
+                {!FoodItem.isGrowing ? <button type="click" onClick={growClick}>Grow!</button> : null}
+                {FoodItem.isGrowing ? <button type="click" onClick={stopGrowClick}>Stop growing</button> : null}
+                {FoodItem.isGrowing ? <p>Started growing on: {FoodItem.startedGrowing}</p> : null}
+                {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing on: {FoodItem.stoppedGrowing}</p> : null}
             </section>
         )
     }

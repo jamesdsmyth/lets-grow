@@ -10,16 +10,14 @@ export function updateTime (time) {
 
 export function startGrowingCreator(foodName) {
     var now = getTime();
-    console.log('this time now is', now);
-    var b = moment(now).add(1, 'second').format(); //just adding a second here.
-    console.log(b);
+    var timeLength = moment(now).add(1, 'second').format(); //just adding a second here.
 
     return {
         type: 'START_GROWING',
         food: foodName,
         isGrowing: true,
         time: now,
-        timeLength: b
+        timeLength: timeLength
     }
 }
 

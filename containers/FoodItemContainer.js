@@ -10,10 +10,6 @@ class FoodItemContainerView extends React.Component {
     startGrowingClick (foodName) {
         console.log('click to start growing', foodName)
         this.props.dispatch(actions.startGrowingCreator(foodName));
-
-        setTimeout(function () {
-            console.log('here');
-        }, 1000)
     }
 
     stopGrowingClick (foodName) {
