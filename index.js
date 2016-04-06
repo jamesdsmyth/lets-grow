@@ -42,3 +42,4 @@ render((
 // - Done - Add moment.js and have readable times being displayed. Added the package, now getting to format the dates
 // - When clicking 'stop growing' within garden, this should refresh the render and remove the item. Could tap into the interval?
 // - Color scheme and theme needs to be thought out and implemented
+// - Add in prompts to tell the user when to water the plants. The notications can be custom and will be done every few minutes for demo purposes

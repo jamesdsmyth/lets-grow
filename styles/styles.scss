@@ -5,13 +5,13 @@ html {
     font-size: 1em;
     font-family: arial, sans-serif;
     color: $primary-type;
+    background: $primary-background;
 }
 
 #lets-grow {
     width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-    background: $primary-background;
     min-height: 100vh;
 
     #main-navigation {
