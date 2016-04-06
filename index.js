@@ -37,6 +37,8 @@ render((
 // - Done - Sass needs to be supported
 // - Done - Months are now listed and if current month is one of the months that food grows in, add certain class
 // - Partially done - Add some way of displaying when exactly the food should be grown through the months. Needs to be visual
-// - Partially done - Add a grow button that writes to the store. Added the start and stop reducers
-// - Partially done - List all currently growing plants in the 'my garden' tab
-// - Partially done - Add moment.js and have readable times being displayed. Added the package, now getting to format the dates
+// - Done - Add a grow button that writes to the store. Added the start and stop reducers
+// - Done - List all currently growing plants in the 'my garden' tab
+// - Done - Add moment.js and have readable times being displayed. Added the package, now getting to format the dates
+// - When clicking 'stop growing' within garden, this should refresh the render and remove the item. Could tap into the interval?
+// - Color scheme and theme needs to be thought out and implemented
