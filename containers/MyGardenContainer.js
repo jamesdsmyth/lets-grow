@@ -15,44 +15,56 @@ class MyGardenContainerView extends React.Component {
         };
     }
 
-    tick() {
+    tick () {
         this.setState({ timer: this.state.timer + 1000 })
     }
 
-    componentDidMount() {
+    componentDidMount () {
         this.interval = setInterval(this.tick.bind(this), 1000);
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
         clearInterval(this.interval);
     }
 
+    stopGrowingClick (foodName) {
+        console.log('click to stop growing', foodName);
+        this.props.dispatch(actions.stopGrowingCreator(foodName));
+    }
+
     render () {
+        var somethingIsgrowing = false;
         var AllFood = this.state.allFood;
+
         // getting all food items that have started growing.
         var touchedFoodList = Object.keys(AllFood).map(function (key) {
 
             if(AllFood[key].isGrowing === true) {
 
-                var startTime = AllFood[key].startedGrowing;
-                var diff,duration,momentObj,incrementOneSecond;
+                somethingIsgrowing = true;
 
+                var startTime = AllFood[key].startedGrowing;
                 var diff = moment.duration(moment().diff(startTime)).humanize();
+                var formattedDate = moment(startTime).format("h:mma, dddd MMMM Do");
 
                 return <li key={AllFood[key].name}>
                             <h3>{AllFood[key].name}</h3>
-                            <p>Started growing at: {startTime}</p>
-                            <p>duration is {diff}</p>
+                            <p>Started growing at {formattedDate}</p>
+                            <p>Been growing for {diff}</p>
+                            <span onClick={() => this.stopGrowingClick(AllFood[key].name)}>Stop growing</span>
                         </li>
             }
+
         }.bind(this));
+
+        console.log(touchedFoodList)
 
         return (
             <div>
-                My Garden
-                <ul>
-                    {touchedFoodList}
-                </ul>
+                <h1>My Garden</h1>
+
+                {!somethingIsgrowing ? <p>You currently do not have any plants growing.</p> : null}
+                {somethingIsgrowing ? <ul>{touchedFoodList}</ul> : null}
             </div>
         )
     }

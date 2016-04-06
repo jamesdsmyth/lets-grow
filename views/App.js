@@ -5,7 +5,7 @@ export default React.createClass({
   render() {
     return (
         <div>
-            <ul role="nav">
+            <ul id="main-navigation">
                 <li>
                     <IndexLink to="/" activeClassName="active">Home</IndexLink>
                 </li>

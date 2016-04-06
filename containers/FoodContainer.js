@@ -17,7 +17,7 @@ class FoodContainerView extends React.Component {
 
         return (
             <div>
-                Food list
+                <h1>Food List</h1>
                 <ul>
                     {FoodList}
                 </ul>

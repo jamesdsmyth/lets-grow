@@ -10,11 +10,34 @@ html {
 #lets-grow {
     width: 1000px;
     margin: 0 auto;
+    padding: 0 20px;
     background: $primary-background;
+    min-height: 100vh;
+
+    #main-navigation {
+        padding: 20px 0;
+        width: 100%;
+        float: left;
+        clear: both;
+
+        li {
+            float: left;
+            margin-right: 20px;
+            text-align: center;
+
+            a {
+                color: $grey;
+            }
+        }
+    }
 
     h1 {
         font-size: 2em;
         text-transform: capitalize;
+        width: 100%;
+        float: left;
+        display: block;
+        margin-bottom: 20px;
     }
 
     .in-season {

@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
+import moment from 'moment'
+
 import currentMonth from '../filters/currentMonth'
 
 class FoodItem extends React.Component {
@@ -41,8 +43,8 @@ class FoodItem extends React.Component {
 
                 {!FoodItem.isGrowing ? <button type="click" onClick={growClick}>Grow!</button> : null}
                 {FoodItem.isGrowing ? <button type="click" onClick={stopGrowClick}>Stop growing</button> : null}
-                {FoodItem.isGrowing ? <p>Started growing on: {FoodItem.startedGrowing}</p> : null}
-                {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing on: {FoodItem.stoppedGrowing}</p> : null}
+                {FoodItem.isGrowing ? <p>Started growing at {moment(FoodItem.startedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
+                {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing at {moment(FoodItem.stoppedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
             </section>
         )
     }
