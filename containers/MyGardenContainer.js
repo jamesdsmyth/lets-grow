@@ -7,15 +7,15 @@ import moment from 'moment'
 import * as actions from '../actions/action-creators'
 
 class MyGardenContainerView extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor (props) {
+        super (props);
         this.state = {
-            allFood: props.AllFood,
             timer: 0
-        };
+        }
     }
 
     tick () {
+        // console.log('ticking');
         this.setState({ timer: this.state.timer + 1000 })
     }
 
@@ -28,13 +28,12 @@ class MyGardenContainerView extends React.Component {
     }
 
     stopGrowingClick (foodName) {
-        console.log('click to stop growing', foodName);
         this.props.dispatch(actions.stopGrowingCreator(foodName));
     }
 
     render () {
         var somethingIsgrowing = false;
-        var AllFood = this.state.allFood;
+        var AllFood = this.props.AllFood;
 
         // getting all food items that have started growing.
         var touchedFoodList = Object.keys(AllFood).map(function (key) {
@@ -56,8 +55,6 @@ class MyGardenContainerView extends React.Component {
             }
 
         }.bind(this));
-
-        console.log(touchedFoodList)
 
         return (
             <div>
