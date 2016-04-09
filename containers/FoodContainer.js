@@ -20,7 +20,7 @@ class FoodContainerView extends React.Component {
 
         return (
             <div>
-                <h1>Food List</h1>
+                {/*!this.props.children ? <h1>What to grow</h1> : null */}
                 <ul className="all-food-list">
                     {FoodList}
                 </ul>

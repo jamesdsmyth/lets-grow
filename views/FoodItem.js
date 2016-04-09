@@ -31,21 +31,29 @@ class FoodItem extends React.Component {
 
         return (
             <section className="food-item">
-                <ul className="calendar">
-                    {list}
-                </ul>
-                <h1>{FoodItem.name}</h1>
-                {/*<header style={headerStyle}>
-                    <h1>{FoodItem.name}</h1>
-                </header>*/}
+                <div className="content">
+                    <header>
+                        <h1>{FoodItem.name}</h1>
+                        {!FoodItem.isGrowing ? <button type="click" className="grow button" onClick={growClick}>Grow!</button> : null}
+                        {FoodItem.isGrowing ? <button type="click" className="stop-growing button" onClick={stopGrowClick}>Stop growing</button> : null}
+                    </header>
+                    <ul className="calendar">
+                        {list}
+                    </ul>
+                    {/*<header style={headerStyle}>
+                        <h1>{FoodItem.name}</h1>
+                    </header>*/}
+                    <div className="description">
+                        <p>Color: {FoodItem.color}</p>
+                        <p>Description: {FoodItem.description}</p>
 
-                <p>Color: {FoodItem.color}</p>
-                <p>Description: {FoodItem.description}</p>
-
-                {!FoodItem.isGrowing ? <button type="click" onClick={growClick}>Grow!</button> : null}
-                {FoodItem.isGrowing ? <button type="click" onClick={stopGrowClick}>Stop growing</button> : null}
-                {FoodItem.isGrowing ? <p>Started growing at {moment(FoodItem.startedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
-                {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing at {moment(FoodItem.stoppedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
+                        {FoodItem.isGrowing ? <p>Started growing at {moment(FoodItem.startedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
+                        {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing at {moment(FoodItem.stoppedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
+                    </div>
+                    <div className="image">
+                        <img src={FoodItem.backgroundImage} alt={FoodItem.name} />
+                    </div>
+                </div>
             </section>
         )
     }
