@@ -31,12 +31,13 @@ class FoodItem extends React.Component {
 
         return (
             <section className="food-item">
-                <header style={headerStyle}>
-                    <h1>{FoodItem.name}</h1>
-                </header>
                 <ul className="calendar">
                     {list}
                 </ul>
+                <h1>{FoodItem.name}</h1>
+                {/*<header style={headerStyle}>
+                    <h1>{FoodItem.name}</h1>
+                </header>*/}
 
                 <p>Color: {FoodItem.color}</p>
                 <p>Description: {FoodItem.description}</p>
