@@ -6,6 +6,7 @@ html {
     font-family: arial, sans-serif;
     color: $primary-type;
     background: $primary-background;
+    box-sizing: border-box;
 }
 
 #lets-grow {
@@ -40,6 +41,11 @@ html {
         margin-bottom: 20px;
     }
 
+    img {
+        width: 100%;
+        height: auto;
+    }
+
     .in-season {
         background: $in-season-background;
     }
@@ -63,22 +69,63 @@ html {
         }
     }
 
-    .calendar {
+    .all-food-list {
         width: 100%;
+        float: left;
 
         li {
-            float: left;
             display: block;
-            width: 8.33%;
-            height: 40px;
-            text-align: center;
-            box-sizing: border-box;
-            border-right: 1px solid $white;
-            color: $white;
-            line-height: 40px;
+            float: left;
+            width: 10%;
 
-            &:last-child {
-                border-right: 0;
+            .image-container {
+                border: 1px solid red;
+                margin: 10px;
+                min-height: 130px;
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+
+                img {
+                    vertical-align: middle;
+                }
+            }
+
+            h3 {
+                opacity: 0;
+            }
+
+            &:hover {
+
+                h3 {
+                    opacity: 1;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .food-item {
+        width: 100%;
+        float: left;
+
+        .calendar {
+            width: 100%;
+
+            li {
+                float: left;
+                display: block;
+                width: 8.33%;
+                height: 40px;
+                text-align: center;
+                box-sizing: border-box;
+                border-right: 1px solid $white;
+                color: $white;
+                line-height: 40px;
+
+                &:last-child {
+                    border-right: 0;
+                }
             }
         }
     }
