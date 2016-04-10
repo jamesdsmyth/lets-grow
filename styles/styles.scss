@@ -41,6 +41,19 @@ html {
         margin-bottom: 20px;
     }
 
+    h2{
+        font-size: 1.8em;
+        text-transform: capitalize;
+        width: 100%;
+        float: left;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 1.5em;
+    }
+
     img {
         width: 100%;
         height: auto;
@@ -161,6 +174,14 @@ html {
                     border-right: 0;
                 }
             }
+        }
+    }
+
+    .currently-growing {
+
+        li {
+            width: 33.33%;
+            float: left;
         }
     }
 }

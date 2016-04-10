@@ -22,6 +22,28 @@ var Data = {
                 "December": true
             }
         },
+        onions: {
+            "name": "onions",
+            "type": "fruit",
+            "color": "red",
+            "description": "Apples are grown in the ground",
+            "backgroundImage": "../images/onion.png",
+            "isGrowing": false,
+            "monthsActive": {
+                "January": false,
+                "February": false,
+                "March": false,
+                "April": false,
+                "May": false,
+                "June": false,
+                "July": true,
+                "August": true,
+                "September": true,
+                "October": true,
+                "November": true,
+                "December": true
+            }
+        },
         carrots: {
             "name": "carrots",
             "type": "vegetables",
@@ -44,34 +66,12 @@ var Data = {
                 "December": true
             }
         },
-        apples1: {
-            "name": "apples1",
-            "type": "fruit",
-            "color": "red",
-            "description": "Apples are grown in the ground",
-            "backgroundImage": "../images/apples.jpg",
-            "isGrowing": false,
-            "monthsActive": {
-                "January": false,
-                "February": false,
-                "March": false,
-                "April": false,
-                "May": false,
-                "June": false,
-                "July": true,
-                "August": true,
-                "September": true,
-                "October": true,
-                "November": true,
-                "December": true
-            }
-        },
-        carrots1: {
-            "name": "carrots1",
+        mushrooms: {
+            "name": "mushrooms",
             "type": "vegetables",
             "color": "orange",
             "description": "Carrots are grown in the sky",
-            "backgroundImage": "../images/carrots.jpg",
+            "backgroundImage": "../images/mushroom.png",
             "isGrowing": false,
             "monthsActive": {
                 "January": true,
@@ -88,12 +88,12 @@ var Data = {
                 "December": true
             }
         },
-        apples2: {
-            "name": "apples2",
+        brocoli: {
+            "name": "brocoli",
             "type": "fruit",
             "color": "red",
             "description": "Apples are grown in the ground",
-            "backgroundImage": "../images/apples.jpg",
+            "backgroundImage": "../images/brocoli.png",
             "isGrowing": false,
             "monthsActive": {
                 "January": false,
@@ -110,12 +110,12 @@ var Data = {
                 "December": true
             }
         },
-        carrots2: {
-            "name": "carrots2",
+        tomatoes: {
+            "name": "tomatoes",
             "type": "vegetables",
             "color": "orange",
             "description": "Carrots are grown in the sky",
-            "backgroundImage": "../images/carrots.jpg",
+            "backgroundImage": "../images/tomato.png",
             "isGrowing": false,
             "monthsActive": {
                 "January": true,
