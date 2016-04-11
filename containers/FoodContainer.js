@@ -12,19 +12,15 @@ class FoodContainerView extends React.Component {
                         <Link to={"/food/" + AllFood[key].name} className="image-container" activeClassName="active">
                             <img src={AllFood[key].backgroundImage} alt={AllFood[key].name} />
                         </Link>
-                        <h3>
-                            <Link to={"/food/" + AllFood[key].name} activeClassName="active">{AllFood[key].name}</Link>
-                        </h3>
                     </li>
         });
 
         return (
             <div>
-                {/*!this.props.children ? <h1>What to grow</h1> : null */}
-                <ul className="all-food-list">
+                {!this.props.children ? <h1>What shall we grow?</h1> : null}
+                <ul className={!this.props.children ? 'all-food-list' : 'all-food-list slim'}>
                     {FoodList}
                 </ul>
-
                 {/* This below shows FoodItemContainer.js if the /:parameter is present eg /carrots */}
                 {this.props.children}
             </div>

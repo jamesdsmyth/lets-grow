@@ -15,7 +15,6 @@ class MyGardenContainerView extends React.Component {
     }
 
     tick () {
-        // console.log('ticking');
         this.setState({ timer: this.state.timer + 1000 })
     }
 

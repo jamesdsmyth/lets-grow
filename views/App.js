@@ -5,7 +5,7 @@ export default React.createClass({
   render() {
     return (
         <div>
-            <header>
+            <header className="main-header">
                 <ul id="main-navigation">
                     <li>
                         <IndexLink to="/" activeClassName="active">Home</IndexLink>
@@ -19,7 +19,7 @@ export default React.createClass({
                 </ul>
             </header>
 
-            <main>
+            <main className="main">
                 {this.props.children}
             </main>
         </div>

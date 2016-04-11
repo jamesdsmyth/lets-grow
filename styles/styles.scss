@@ -3,33 +3,53 @@
 
 html {
     font-size: 1em;
-    font-family: arial, sans-serif;
+    font-family: 'Lora', serif;
     color: $primary-type;
     background: $primary-background;
     box-sizing: border-box;
+
 }
 
 #lets-grow {
-    width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-    min-height: 100vh;
 
-    #main-navigation {
-        padding: 20px 0;
+    a {
+        text-decoration: none;
+        color: $link;
+
+        &:hover {
+            color: $link-hover;
+        }
+    }
+
+    .main-header {
         width: 100%;
+        background: $grey;
         float: left;
-        clear: both;
+        padding: 20px 0;
+        margin-bottom: 20px;
 
-        li {
-            float: left;
-            margin-right: 20px;
-            text-align: center;
+        #main-navigation {
+            width: 210px;
+            clear: both;
+            margin: 0 auto;
 
-            a {
-                color: $grey;
+            li {
+                float: left;
+                margin-right: 20px;
+                text-align: center;
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
+    }
+
+    .main {
+        width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+        min-height: 100vh;
     }
 
     h1 {
@@ -38,7 +58,16 @@ html {
         width: 100%;
         float: left;
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        text-align: center;
+        color: $green;
+
+        &.intro {
+            font-size: 5em;
+            text-align: center;
+            margin-top: 50px;
+        }
     }
 
     h2{
@@ -65,7 +94,7 @@ html {
         font-size: 1em;
         border: 0;
         cursor: pointer;
-        float: left;
+        margin-bottom: 15px;
 
         &.grow {
             background: $grow-button;
@@ -86,11 +115,16 @@ html {
     }
 
     .all-food-list {
-        width: 500px;
+        width: 100%;
         position: relative;
-        margin: 0 auto;
         display: block;
-        clear: both;
+        float: left;
+
+        &.slim {
+            width: 500px;
+            margin: 0 auto;
+            float: none;
+        }
 
         li {
             display: block;
@@ -103,21 +137,18 @@ html {
                 display: inline-block;
                 height: 100%;
                 vertical-align: middle;
+                opacity: 0.5;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &.active {
+                    opacity: 1;
+                }
 
                 img {
                     vertical-align: middle;
-                }
-            }
-
-            h3 {
-                opacity: 0;
-            }
-
-            &:hover {
-
-                h3 {
-                    opacity: 1;
-                    text-align: center;
                 }
             }
         }
@@ -132,18 +163,15 @@ html {
             clear: both;
             float: left;
             width: 100%;
-            margin-top: 15px;
-            padding: 15px 0;
         }
 
         h1 {
-            width: 30%;
             margin-bottom: 0;
         }
 
         header {
             width: 100%;
-            border-bottom: 1px solid $primary-type;
+            border-bottom: 1px solid $grey;
             padding: 15px 0;
             margin-bottom: 15px;
             float: left;
@@ -154,24 +182,50 @@ html {
             float: left;
             width: 50%;
             padding: 15px 0;
+            margin-top: 20px;
+
+            img {
+                width: 50%;
+                height: auto;
+                margin: 0 auto;
+                position: relative;
+                display: block;
+            }
         }
 
         .calendar {
-            width: 100%;
+            width: 748px;
+            margin: 0 auto;
 
             li {
                 float: left;
                 display: block;
-                width: 8.33%;
-                height: 40px;
-                text-align: center;
+                width: 44px;
+                height: 44px;
+                margin-right: 20px;
                 box-sizing: border-box;
-                border-right: 1px solid $white;
                 color: $white;
-                line-height: 40px;
+                border-radius: 50px;
+                line-height: 44px;
+                position: relative;
+
+                span {
+                    width: 44px;
+                    text-align: center;
+                    display: block;
+                }
+
+                &.current-month {
+                    border: 2px solid red;
+
+                    span {
+                        width: 40px;
+                    }
+                }
 
                 &:last-child {
                     border-right: 0;
+                    margin-right: 0;
                 }
             }
         }
