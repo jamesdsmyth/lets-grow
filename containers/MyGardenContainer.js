@@ -46,9 +46,12 @@ class MyGardenContainerView extends React.Component {
                 var formattedDate = moment(startTime).format("h:mma, dddd MMMM Do");
 
                 return <li key={AllFood[key].name}>
-                            <h2>{AllFood[key].name}</h2>
-                            <p>Started growing at {formattedDate}</p>
-                            <p>Been growing for {diff}</p>
+                            <div className="food-header">
+                                <h2>{AllFood[key].name}</h2>
+                                <img src={AllFood[key].backgroundImage} alt={AllFood[key].name} />
+                            </div>
+                            <p><span>Planted: </span>{formattedDate}.</p>
+                            <p>This item has been growing for {diff}.</p>
                             <button type="click" className="stop-growing button" onClick={() => this.stopGrowingClick(AllFood[key].name)}>Stop growing</button>
                         </li>
             }
