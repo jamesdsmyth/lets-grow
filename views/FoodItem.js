@@ -11,11 +11,10 @@ class FoodItem extends React.Component {
         console.log(FoodItem);
         var growClick = this.props.growClick; // passing the click event from FoodItemContainer
         var stopGrowClick = this.props.stopGrowClick;
-        var bbb = moment().month();
-        console.log(bbb);
+        var currentMonth = moment().month();
         // map function to loop through each object item and get the key and value.
         var i = 0;
-        var list = Object.keys(FoodItem.monthsActive).map(function(month) {
+        var calendarMonths = Object.keys(FoodItem.monthsActive).map(function(month) {
             i++;
 
             // month returns 'January true'
@@ -24,16 +23,31 @@ class FoodItem extends React.Component {
             var inSeason = FoodItem.monthsActive[month];
             var type = inSeason == true ? 'in-season' : 'not-in-season';
 
-            return <li key={month} className={i == bbb ? type + ' current-month' : type}>
+            return <li key={month} className={i == currentMonth ? type + ' current-month' : type}>
                         <span>
                             {month[0]}
                         </span>
                     </li>
         });
 
-        var headerStyle = {
-            backgroundImage: 'url(' + FoodItem.backgroundImage + ')'
-        };
+        var x = 0;
+        var instructions = FoodItem.instructions.map(function (item) {
+            x++;
+            return <li  key={x}>
+                        <span>
+                            {item}
+                        </span>
+                    </li>
+        });
+        var y = 999;
+        var harvestInstructions = FoodItem.harvestInstructions.map(function (item) {
+            y++;
+            return <li  key={y}>
+                        <span>
+                            {item}
+                        </span>
+                    </li>
+        });
 
         return (
             <section className="food-item">
@@ -42,19 +56,27 @@ class FoodItem extends React.Component {
                         <h1>{FoodItem.name}</h1>
                     </header>
                     <ul className="calendar">
-                        {list}
+                        {calendarMonths}
                     </ul>
                     <div className="description">
-                        {!FoodItem.isGrowing ? <button type="click" className="grow button" onClick={growClick}>Grow!</button> : null}
-                        {FoodItem.isGrowing ? <button type="click" className="stop-growing button" onClick={stopGrowClick}>Stop growing</button> : null}
-                        <p>Color: {FoodItem.color}</p>
-                        <p>Description: {FoodItem.description}</p>
-
-                        {FoodItem.isGrowing ? <p>Started growing at {moment(FoodItem.startedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
-                        {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing at {moment(FoodItem.stoppedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
+                        <div className="inner">
+                            {!FoodItem.isGrowing ? <button type="click" className="grow button" onClick={growClick}>Grow!</button> : null}
+                            {FoodItem.isGrowing ? <button type="click" className="stop-growing button" onClick={stopGrowClick}>Stop growing</button> : null}
+                            {FoodItem.isGrowing ? <p>Started growing at {moment(FoodItem.startedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
+                            {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing at {moment(FoodItem.stoppedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
+                            <p>Type: {FoodItem.type}</p>
+                            <h3>What are they?</h3>
+                            <p>{FoodItem.description}</p>
+                            <h3>How to plant</h3>
+                            <ol className="ordered-list">{instructions}</ol>
+                            <h3>When to harvest</h3>
+                            <ul className="unordered-list">{harvestInstructions}</ul>
+                        </div>
                     </div>
                     <div className="image">
-                        <img src={FoodItem.backgroundImage} alt={FoodItem.name} />
+                        <div className="inner">
+                            <img src={FoodItem.backgroundImage} alt={FoodItem.name} />
+                        </div>
                     </div>
                 </div>
             </section>

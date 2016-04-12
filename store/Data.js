@@ -3,7 +3,6 @@ var Data = {
         apples: {
             "name": "apples",
             "type": "fruit",
-            "color": "red",
             "description": "Apples are grown in the ground",
             "backgroundImage": "../images/apple.png",
             "isGrowing": false,
@@ -25,7 +24,6 @@ var Data = {
         onions: {
             "name": "onions",
             "type": "fruit",
-            "color": "red",
             "description": "Apples are grown in the ground",
             "backgroundImage": "../images/onion.png",
             "isGrowing": false,
@@ -46,9 +44,20 @@ var Data = {
         },
         carrots: {
             "name": "carrots",
-            "type": "vegetables",
-            "color": "orange",
-            "description": "Carrots are grown in the sky",
+            "type": "vegetable",
+            "lengthOfGrowth": 12, // in weeks
+            "whenToWater": 1, // in days
+            "description": "Carrots are a popular root vegetable that are easy to grow in sandy soil. They are resistant to most pests and diseases, and are a good late season crop that can tolerate frost. Not all carrots are orange; varieties vary in color from purple to white.",
+            "instructions": [
+                "Plan to plant seeds outdoors 3 to 5 weeks before the last spring frost date.",
+                "Make sure your soil is free of stones; carrots need deeply tilled soil that they can push through.",
+                "Plant seeds 3-4 inches apart in rows. Rows should be at least a foot apart."
+            ],
+            "harvestInstructions": [
+                "Carrots are mature at around 2 ½ months and ½ inch in diameter. You may harvest whenever desired maturity is reached.",
+                "You may leave mature carrots in the soil for storage if the ground will not freeze.",
+                "To store freshly harvested carrots, twist off the tops, scrub off the dirt under cold running water, let dry and seal in airtight plastic bags, and refrigerate. If you simply put fresh carrots in the refrigerator, they’ll go limp in a few hours."
+            ],
             "backgroundImage": "../images/carrot.png",
             "isGrowing": false,
             "monthsActive": {
@@ -68,8 +77,7 @@ var Data = {
         },
         mushrooms: {
             "name": "mushrooms",
-            "type": "vegetables",
-            "color": "orange",
+            "type": "vegetable",
             "description": "Carrots are grown in the sky",
             "backgroundImage": "../images/mushroom.png",
             "isGrowing": false,
@@ -91,7 +99,6 @@ var Data = {
         brocoli: {
             "name": "brocoli",
             "type": "fruit",
-            "color": "red",
             "description": "Apples are grown in the ground",
             "backgroundImage": "../images/brocoli.png",
             "isGrowing": false,
@@ -112,8 +119,7 @@ var Data = {
         },
         tomatoes: {
             "name": "tomatoes",
-            "type": "vegetables",
-            "color": "orange",
+            "type": "vegetable",
             "description": "Carrots are grown in the sky",
             "backgroundImage": "../images/tomato.png",
             "isGrowing": false,

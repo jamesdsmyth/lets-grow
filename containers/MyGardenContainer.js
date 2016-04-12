@@ -62,7 +62,7 @@ class MyGardenContainerView extends React.Component {
             <div>
                 <h1>My Garden</h1>
 
-                {!somethingIsgrowing ? <p>You currently do not have any plants growing.</p> : null}
+                {!somethingIsgrowing ? <p className="intro">You currently do not have any plants growing.</p> : null}
                 {somethingIsgrowing ? <ul className="currently-growing">{touchedFoodList}</ul> : null}
             </div>
         )

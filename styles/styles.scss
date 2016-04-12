@@ -3,11 +3,10 @@
 
 html {
     font-size: 1em;
-    font-family: 'Lora', serif;
+    font-family: 'Inconsolata', serif;
     color: $primary-type;
-    background: $primary-background;
+    background: $grey;
     box-sizing: border-box;
-
 }
 
 #lets-grow {
@@ -19,17 +18,21 @@ html {
         &:hover {
             color: $link-hover;
         }
+
+        &.active {
+            color: $link-hover;
+        }
     }
 
     .main-header {
         width: 100%;
-        background: $grey;
+        background: $white;
         float: left;
         padding: 20px 0;
         margin-bottom: 20px;
 
         #main-navigation {
-            width: 210px;
+            width: 125px;
             clear: both;
             margin: 0 auto;
 
@@ -37,6 +40,7 @@ html {
                 float: left;
                 margin-right: 20px;
                 text-align: center;
+                width: auto;
 
                 &:last-child {
                     margin-right: 0;
@@ -45,11 +49,36 @@ html {
         }
     }
 
+    .ordered-list {
+        margin-bottom: 15px;
+
+        li {
+            width: 100%;
+            line-height: 1.5em;
+            clear: both;
+            margin-left: 25px;
+            margin-bottom: 10px;
+            list-style-type: decimal;
+        }
+    }
+
+    .unordered-list {
+        margin-bottom: 15px;
+
+        li {
+            width: 100%;
+            line-height: 1.5em;
+            clear: both;
+            margin-bottom: 10px;
+        }
+    }
+
     .main {
-        width: 1000px;
+        width: 960px;
         margin: 0 auto;
         padding: 0 20px;
         min-height: 100vh;
+        clear: both;
     }
 
     h1 {
@@ -70,7 +99,7 @@ html {
         }
     }
 
-    h2{
+    h2 {
         font-size: 1.8em;
         text-transform: capitalize;
         width: 100%;
@@ -79,8 +108,21 @@ html {
         margin-bottom: 20px;
     }
 
+    h3 {
+        font-size: 1.6em;
+        width: 100%;
+        float: left;
+        display: block;
+        margin-bottom: 15px;
+    }
+
     p {
         line-height: 1.5em;
+        margin-bottom: 15px;
+
+        &.intro {
+            text-align: center;
+        }
     }
 
     img {
@@ -191,6 +233,10 @@ html {
                 position: relative;
                 display: block;
             }
+        }
+
+        .inner {
+            padding: 0 15px;
         }
 
         .calendar {

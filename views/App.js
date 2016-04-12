@@ -7,9 +7,9 @@ export default React.createClass({
         <div>
             <header className="main-header">
                 <ul id="main-navigation">
-                    <li>
+                    {/*<li>
                         <IndexLink to="/" activeClassName="active">Home</IndexLink>
-                    </li>
+                    </li>*/}
                     <li>
                         <Link to="/food" activeClassName="active">Food</Link>
                     </li>
