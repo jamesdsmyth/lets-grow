@@ -17,7 +17,6 @@ Quick breakdown of the main files and how `react-router` and `react-redux` live 
 + `index.html` - contains the html markup that the application will be contained within. In this case `<main id="lets-grow" />`
 + `index.js` - contains initialization of the react-router
   * `App.js` - wraps the application in a layer that contains the top level navigation and all state changes occur while wrapped in this layer using `{this.props.children}`
-  * `Home.js` - the default page for when the application is at `/`
   * `MyGardenContainer.js` (my garden) - contains each food item that is currently being grown and uses [moment.js] (http://momentjs.com/) to record, format and display the length of how long that food item has been growing for
   * `FoodContainer.js` (food) - a container that lists all available foods and links to individual foods. As this contains children in the `react-router` tree, it contains the `{this.props.children}` with will look out for parameters on the url that matches the fruit that is in the store and link to the correct food item via the `FoodItemContainer.js`
   * `FoodItemContainer.js` (eg. food/carrots) - contains the store and checks the param that it is passed. It gets the correct food from the store and passes it to the `FoodItem.js` which renders the food item

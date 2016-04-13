@@ -64,13 +64,19 @@ class FoodItem extends React.Component {
                             {FoodItem.isGrowing ? <button type="click" className="stop-growing button" onClick={stopGrowClick}>Stop growing</button> : null}
                             {FoodItem.isGrowing ? <p>Started growing at {moment(FoodItem.startedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
                             {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing at {moment(FoodItem.stoppedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
-                            <p>Type: {FoodItem.type}</p>
+                            <p>Plant type: {FoodItem.type}</p>
+                            <h3>How long until I can harvest them?</h3>
+                            <p>Around {FoodItem.lengthOfGrowth} weeks</p>
                             <h3>What are they?</h3>
                             <p>{FoodItem.description}</p>
                             <h3>How to plant</h3>
                             <ol className="ordered-list">{instructions}</ol>
+                            <h3>When to water</h3>
+                            <p>You should water this every {FoodItem.whenToWater} {FoodItem.whenToWater == 1 ? 'day' : 'days'}</p>
                             <h3>When to harvest</h3>
                             <ul className="unordered-list">{harvestInstructions}</ul>
+                            <h3>Sun exposure</h3>
+                            <p>{FoodItem.sunExposure}</p>
                         </div>
                     </div>
                     <div className="image">

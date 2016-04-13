@@ -61,7 +61,6 @@ class MyGardenContainerView extends React.Component {
         return (
             <div>
                 <h1>My Garden</h1>
-
                 {!somethingIsgrowing ? <p className="intro">You currently do not have any plants growing.</p> : null}
                 {somethingIsgrowing ? <ul className="currently-growing">{touchedFoodList}</ul> : null}
             </div>

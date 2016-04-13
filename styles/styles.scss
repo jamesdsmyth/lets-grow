@@ -262,7 +262,7 @@ html {
                 }
 
                 &.current-month {
-                    border: 2px solid red;
+                    border: 2px solid $current-month;
 
                     span {
                         width: 40px;
