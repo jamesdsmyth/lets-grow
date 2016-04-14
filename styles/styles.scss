@@ -162,36 +162,39 @@ html {
         display: block;
         float: left;
 
-        &.slim {
-            width: 500px;
-            margin: 0 auto;
-            float: none;
-        }
-
         li {
             display: block;
             float: left;
             width: 16.66%;
+        }
+
+        .image-container {
+            padding: 0 10px;
+            height: 200px;
+            vertical-align: middle;
+            display: table-cell;
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.active {
+                opacity: 1;
+            }
+
+            img {
+                vertical-align: middle;
+            }
+        }
+
+        &.slim {
+            width: 500px;
+            margin: 0 auto;
+            float: none;
 
             .image-container {
-                margin: 10px;
-                min-height: 80px;
-                display: inline-block;
-                height: 100%;
-                vertical-align: middle;
-                opacity: 0.5;
-
-                &:hover {
-                    opacity: 1;
-                }
-
-                &.active {
-                    opacity: 1;
-                }
-
-                img {
-                    vertical-align: middle;
-                }
+                height: 100px;
             }
         }
     }
@@ -219,11 +222,15 @@ html {
             float: left;
         }
 
-        .description,
+        .description {
+            float: left;
+            width: 50%;
+            margin-top: 20px;
+        }
+
         .image {
             float: left;
             width: 50%;
-            padding: 15px 0;
             margin-top: 20px;
 
             img {
@@ -232,11 +239,12 @@ html {
                 margin: 0 auto;
                 position: relative;
                 display: block;
+                margin-top: 50px;
             }
         }
 
         .inner {
-            padding: 0 15px;
+            padding: 15px;
         }
 
         .calendar {

@@ -69,7 +69,7 @@ class FoodItem extends React.Component {
                             <p>Around {FoodItem.lengthOfGrowth} weeks</p>
                             <h3>What are they?</h3>
                             <p>{FoodItem.description}</p>
-                            <h3>How to plant</h3>
+                            <h3>How to grow</h3>
                             <ol className="ordered-list">{instructions}</ol>
                             <h3>When to water</h3>
                             <p>You should water this every {FoodItem.whenToWater} {FoodItem.whenToWater == 1 ? 'day' : 'days'}</p>
