@@ -16,7 +16,7 @@ class FoodItemContainerView extends React.Component {
         console.log('click to stop growing', foodName);
         this.props.dispatch(actions.stopGrowingCreator(foodName));
     }
-    
+
     render () {
         var param = this.props.params.foodName; // getting the food param from the url
         var FoodItemState  = this.props.Food[param]; // getting the state from the reducer and just saving the individual foodItem

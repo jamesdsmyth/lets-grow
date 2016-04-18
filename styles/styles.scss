@@ -7,6 +7,31 @@ html {
     color: $primary-type;
     background: $grey;
     box-sizing: border-box;
+    animation-iteration-count: infinite;
+    animation-name: backgroundColors;
+    animation-duration: 60s;
+}
+
+@keyframes backgroundColors {
+    0%, 100% {
+        background: $grey;
+    }
+
+    20% {
+        background: $backgroundOrange;
+    }
+
+    40% {
+        background: $backgroundYellow; //yellow
+    }
+
+    60% {
+        background: $backgroundGreen; // light green
+    }
+
+    80% {
+        background: $backgroundBlue; // light blue
+    }
 }
 
 #lets-grow {
@@ -137,6 +162,8 @@ html {
         border: 0;
         cursor: pointer;
         margin-bottom: 15px;
+        border-bottom: 1px solid $grey-strike;
+        border-right: 1px solid $grey-strike;
 
         &.grow {
             background: $grow-button;
@@ -173,15 +200,6 @@ html {
             height: 200px;
             vertical-align: middle;
             display: table-cell;
-            opacity: 0.5;
-
-            &:hover {
-                opacity: 1;
-            }
-
-            &.active {
-                opacity: 1;
-            }
 
             img {
                 vertical-align: middle;
@@ -195,6 +213,15 @@ html {
 
             .image-container {
                 height: 100px;
+                opacity: 0.5;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &.active {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -216,9 +243,9 @@ html {
 
         header {
             width: 100%;
-            border-bottom: 1px solid $grey;
+            border-bottom: 1px solid $grey-strike;
             padding: 15px 0;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             float: left;
         }
 

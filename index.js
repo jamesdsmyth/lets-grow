@@ -41,7 +41,7 @@ render((
 // - Done - List all currently growing plants in the 'my garden' tab
 // - Done - Add moment.js and have readable times being displayed. Added the package, now getting to format the dates
 // - Done - When clicking 'stop growing' within garden, this should refresh the render and remove the item. Could tap into the interval?
-// - Partially done - Color scheme and theme needs to be thought out and implemented
+// - Done - Color scheme and theme needs to be thought out and implemented
 // - Add dropdown to list what is in season and what is not in season
-// - Add real fruit and veg data
+// - Done - Add real fruit and veg data
 // - Add in prompts to tell the user when to water the plants. The notications can be custom and will be done every few minutes for demo purposes

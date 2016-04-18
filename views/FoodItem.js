@@ -11,7 +11,7 @@ class FoodItem extends React.Component {
         console.log(FoodItem);
         var growClick = this.props.growClick; // passing the click event from FoodItemContainer
         var stopGrowClick = this.props.stopGrowClick;
-        var currentMonth = moment().month();
+        var currentMonth = moment().month() + 1;
         // map function to loop through each object item and get the key and value.
         var i = 0;
         var calendarMonths = Object.keys(FoodItem.monthsActive).map(function(month) {
