@@ -58,6 +58,11 @@ class FoodItem extends React.Component {
                     <ul className="calendar">
                         {calendarMonths}
                     </ul>
+                    <div className="image">
+                        <div className="inner">
+                            <img src={FoodItem.backgroundImage} alt={FoodItem.name} />
+                        </div>
+                    </div>
                     <div className="description">
                         <div className="inner">
                             {!FoodItem.isGrowing ? <button type="click" className="grow button" onClick={growClick}>Grow!</button> : null}
@@ -77,11 +82,6 @@ class FoodItem extends React.Component {
                             <ul className="unordered-list">{harvestInstructions}</ul>
                             <h3>Sun exposure</h3>
                             <p>{FoodItem.sunExposure}</p>
-                        </div>
-                    </div>
-                    <div className="image">
-                        <div className="inner">
-                            <img src={FoodItem.backgroundImage} alt={FoodItem.name} />
                         </div>
                     </div>
                 </div>

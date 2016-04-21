@@ -78,7 +78,6 @@ html {
         margin-bottom: 15px;
 
         li {
-            width: 100%;
             line-height: 1.5em;
             clear: both;
             margin-left: 25px;
@@ -91,7 +90,6 @@ html {
         margin-bottom: 15px;
 
         li {
-            width: 100%;
             line-height: 1.5em;
             clear: both;
             margin-bottom: 10px;
@@ -99,9 +97,10 @@ html {
     }
 
     .main {
-        width: 960px;
+        width: 96%;
+        max-width: 960px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 2%;
         min-height: 100vh;
         clear: both;
     }
@@ -113,7 +112,6 @@ html {
         float: left;
         display: block;
         margin-bottom: 40px;
-        margin-top: 20px;
         text-align: center;
         color: $green;
 
@@ -128,7 +126,7 @@ html {
         font-size: 1.8em;
         text-transform: capitalize;
         width: 100%;
-        float: left;
+        text-align: center;
         display: block;
         margin-bottom: 20px;
     }
@@ -136,9 +134,9 @@ html {
     h3 {
         font-size: 1.6em;
         width: 100%;
-        float: left;
+        text-align: center;
         display: block;
-        margin-bottom: 15px;
+        margin: 25px 0 15px;
     }
 
     p {
@@ -197,7 +195,7 @@ html {
 
         .image-container {
             padding: 0 10px;
-            height: 200px;
+            height: 100px;
             vertical-align: middle;
             display: table-cell;
 
@@ -207,7 +205,7 @@ html {
         }
 
         &.slim {
-            width: 500px;
+            width: 100%;
             margin: 0 auto;
             float: none;
 
@@ -251,13 +249,13 @@ html {
 
         .description {
             float: left;
-            width: 50%;
+            width: 100%;
             margin-top: 20px;
         }
 
         .image {
-            float: left;
-            width: 50%;
+            float: right;
+            width: 100%;
             margin-top: 20px;
 
             img {
@@ -266,24 +264,20 @@ html {
                 margin: 0 auto;
                 position: relative;
                 display: block;
-                margin-top: 50px;
             }
         }
 
-        .inner {
-            padding: 15px;
-        }
-
         .calendar {
-            width: 748px;
+            width: 100%;
             margin: 0 auto;
+            clear: both;
 
             li {
                 float: left;
                 display: block;
                 width: 44px;
                 height: 44px;
-                margin-right: 20px;
+                margin: 0 20px 20px 0;
                 box-sizing: border-box;
                 color: $white;
                 border-radius: 50px;
@@ -308,6 +302,10 @@ html {
                     border-right: 0;
                     margin-right: 0;
                 }
+
+                &:nth-child(7) {
+                    clear: left;
+                }
             }
         }
     }
@@ -315,8 +313,8 @@ html {
     .currently-growing {
 
         li {
-            width: 32%;
-            margin-right: 2%;
+            width: 100%;
+            margin-right: 0;
             margin-bottom: 30px;
             float: left;
 
@@ -352,6 +350,75 @@ html {
             .button {
                 margin-top: 15px;
             }
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+        #main-navigation {
+            width: 125px;
+        }
+
+        .main {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .food-item {
+
+            .description {
+                width: 50%;
+            }
+
+            .image {
+                width: 50%;
+
+                img {
+                    margin-top: 50px;
+                }
+            }
+
+            .inner {
+                padding: 15px;
+            }
+
+            .calendar {
+                width: 748px;
+
+                li {
+
+                    &:nth-child(7) {
+                        clear: none;
+                    }
+                }
+            }
+        }
+
+        .all-food-list {
+
+            .image-container {
+                height: 200px;
+            }
+
+            &.slim {
+                width: 500px;
+            }
+        }
+
+        .currently-growing {
+
+            li {
+                width: 32%;
+                margin-right: 2%;
+            }
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        h2 {
+            float: left;
+            text-align: left;
         }
     }
 }
