@@ -7,10 +7,11 @@ class FoodContainerView extends React.Component {
         var AllFood = this.props.AllFood;
 
         // Creating my food list items as well as a link that takes the user to the individual food item page.
-        var FoodList = Object.keys(AllFood).map(function(key) {
-            return <li key={AllFood[key].name}>
-                        <Link to={"/food/" + AllFood[key].name} className="image-container" activeClassName="active">
-                            <img src={AllFood[key].backgroundImage} alt={AllFood[key].name} />
+        var FoodList = Object.keys(AllFood).map(function(item) {
+            console.log(item);
+            return <li key={AllFood[item].name}>
+                        <Link to={"/food/" + AllFood[item].name} className="image-container" activeClassName="active">
+                            <img src={AllFood[item].backgroundImage} alt={AllFood[item].name} />
                         </Link>
                     </li>
         });

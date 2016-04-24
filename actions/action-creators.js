@@ -1,32 +1,29 @@
 import moment from 'moment';
 
-export function getTime () {
+function getTime () {
     return moment().format();
 }
 
-export function updateTime (time) {
-    return moment(time).add(1, 'second').format();
-}
-
-export function startGrowingCreator(foodName) {
-    var now = getTime();
-    var timeLength = moment(now).add(1, 'second').format(); //just adding a second here.
-
+export function startGrowingCreator (foodName) {
     return {
         type: 'START_GROWING',
         food: foodName,
         isGrowing: true,
-        time: now,
-        timeLength: timeLength
+        time: getTime()
     }
 }
 
-export function stopGrowingCreator(foodName) {
-    var now = getTime();
-
+export function stopGrowingCreator (foodName) {
     return {
         type: 'STOP_GROWING',
         food: foodName,
-        time: now
+        time: getTime()
+    }
+}
+
+export function toBeWatered (foodName) {
+    return {
+        type: 'NEEDS_WATERING',
+        food: foodName
     }
 }

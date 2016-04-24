@@ -256,7 +256,7 @@ html {
         .image {
             float: right;
             width: 100%;
-            margin-top: 20px;
+            margin: 20px 0;
 
             img {
                 width: 50%;
@@ -371,6 +371,7 @@ html {
 
             .image {
                 width: 50%;
+                margin-bottom: 0;
 
                 img {
                     margin-top: 50px;

@@ -5,6 +5,7 @@ import { Link } from 'react-router'
 import moment from 'moment'
 
 import * as actions from '../actions/action-creators'
+import NotificationContainer from './NotificationContainer'
 
 class MyGardenContainerView extends React.Component {
     constructor (props) {
@@ -16,6 +17,7 @@ class MyGardenContainerView extends React.Component {
 
     tick () {
         this.setState({ timer: this.state.timer + 1000 })
+        console.log(this.state.timer);
     }
 
     componentDidMount () {
@@ -30,29 +32,58 @@ class MyGardenContainerView extends React.Component {
         this.props.dispatch(actions.stopGrowingCreator(foodName));
     }
 
+    toWater (foodName) {
+        console.log(foodName, 'needs to be watered');
+        this.props.dispatch(actions.toBeWatered(foodName));
+    }
+
+    ccc (diff, whenToWater, foodName) {
+        if(diff > whenToWater) {
+            console.log('need to water this plant right now');
+            // need to call a reducer that says the isWtered = false;
+            // this.toWater(AllFood[item].name);
+            this.props.dispatch(actions.toBeWatered(foodName));
+        }
+    }
+
     render () {
         var somethingIsgrowing = false;
         var AllFood = this.props.AllFood;
 
         // getting all food items that have started growing.
-        var touchedFoodList = Object.keys(AllFood).map(function (key) {
+        var touchedFoodList = Object.keys(AllFood).map(function (item) {
 
-            if(AllFood[key].isGrowing === true) {
+            if(AllFood[item].isGrowing === true) {
 
                 somethingIsgrowing = true;
 
-                var startTime = AllFood[key].startedGrowing;
-                var diff = moment.duration(moment().diff(startTime)).humanize();
+                var startTime = AllFood[item].startedGrowing;
+                var diff = moment.duration(moment().diff(startTime));
+                var whenToWater = AllFood[item].whenToWater * (1000 * 10); // this equates to a minute if AllFood[item].whenToWater is '1'.
+                // console.log(diff);
+                // if((diff > whenToWater) && (AllFood[item].isWatered == false)) {
+
+
+
+
+                // this.ccc(diff, whenToWater, foodName); //this is causing an error at the moment.
+
+
+
+
+
+                var readableDiff = diff.humanize();
                 var formattedDate = moment(startTime).format("h:mma, dddd MMMM Do");
 
-                return <li key={AllFood[key].name}>
+                return <li key={AllFood[item].name}>
                             <div className="food-header">
-                                <h2>{AllFood[key].name}</h2>
-                                <img src={AllFood[key].backgroundImage} alt={AllFood[key].name} />
+                                <h2>{AllFood[item].name}</h2>
+                                <img src={AllFood[item].backgroundImage} alt={AllFood[item].name} />
                             </div>
                             <p><span>Planted: </span>{formattedDate}.</p>
-                            <p>This item has been growing for {diff}.</p>
-                            <button type="click" className="stop-growing button" onClick={() => this.stopGrowingClick(AllFood[key].name)}>Stop growing</button>
+                            <p>This item has been growing for {readableDiff}.</p>
+                            {AllFood[item].isWatered == false ? <p>BRESH</p> : ''}
+                            <button type="click" className="stop-growing button" onClick={() => this.stopGrowingClick(AllFood[item].name)}>Stop growing</button>
                         </li>
             }
 
@@ -63,6 +94,7 @@ class MyGardenContainerView extends React.Component {
                 <h1>My Garden</h1>
                 {!somethingIsgrowing ? <p className="intro">You currently do not have any plants growing</p> : null}
                 {somethingIsgrowing ? <ul className="currently-growing">{touchedFoodList}</ul> : null}
+                <NotificationContainer />
             </div>
         )
     }

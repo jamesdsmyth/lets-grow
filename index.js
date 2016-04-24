@@ -10,7 +10,6 @@ import App from './views/App'
 import MyGardenContainer from './containers/MyGardenContainer'
 import FoodContainer from './containers/FoodContainer'
 import FoodItemContainer from './containers/FoodItemContainer'
-import Home from './views/Home' // currently not being used
 import Store from './reducers/CombinedReducer'
 
 render((

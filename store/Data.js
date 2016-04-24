@@ -19,6 +19,7 @@ var Data = {
             "sunExposure": "Full sun",
             "backgroundImage": "../images/apple.png",
             "isGrowing": false,
+            "isWatered": false,
             "monthsActive": {
                 "January": true,
                 "February": true,
@@ -52,6 +53,7 @@ var Data = {
             "sunExposure": "Full sun",
             "backgroundImage": "../images/onion.png",
             "isGrowing": false,
+            "isWatered": false,
             "monthsActive": {
                 "January": false,
                 "February": true,
@@ -86,6 +88,7 @@ var Data = {
             "sunExposure": "Full sun",
             "backgroundImage": "../images/carrot.png",
             "isGrowing": false,
+            "isWatered": false,
             "monthsActive": {
                 "January": false,
                 "February": true,
@@ -120,6 +123,7 @@ var Data = {
             "sunExposure": "Full sun",
             "backgroundImage": "../images/pepper.png",
             "isGrowing": false,
+            "isWatered": false,
             "monthsActive": {
                 "January": false,
                 "February": true,
@@ -157,6 +161,7 @@ var Data = {
             "sunExposure": "Full sun",
             "backgroundImage": "../images/potato.png",
             "isGrowing": false,
+            "isWatered": false,
             "monthsActive": {
                 "January": false,
                 "February": false,
@@ -192,6 +197,7 @@ var Data = {
             "sunExposure": "Full sun",
             "backgroundImage": "../images/tomato.png",
             "isGrowing": false,
+            "isWatered": false,
             "monthsActive": {
                 "January": false,
                 "February": true,

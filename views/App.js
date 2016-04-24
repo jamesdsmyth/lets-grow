@@ -1,15 +1,14 @@
 import React from 'react'
 import{ Link, IndexLink } from 'react-router'
 
+
+
 export default React.createClass({
   render() {
     return (
         <div>
             <header className="main-header">
                 <ul id="main-navigation">
-                    {/*<li>
-                        <IndexLink to="/" activeClassName="active">Home</IndexLink>
-                    </li>*/}
                     <li>
                         <Link to="/food" activeClassName="active">Food</Link>
                     </li>
@@ -22,6 +21,7 @@ export default React.createClass({
             <main className="main">
                 {this.props.children}
             </main>
+
         </div>
     )
   }
