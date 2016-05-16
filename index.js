@@ -10,6 +10,7 @@ import App from './views/App'
 import MyGardenContainer from './containers/MyGardenContainer'
 import FoodContainer from './containers/FoodContainer'
 import FoodItemContainer from './containers/FoodItemContainer'
+import NotificationContainer from './containers/NotificationContainer'
 import Store from './reducers/CombinedReducer'
 
 render((
@@ -43,4 +44,7 @@ render((
 // - Done - Color scheme and theme needs to be thought out and implemented
 // - Add dropdown to list what is in season and what is not in season
 // - Done - Add real fruit and veg data
-// - Add in prompts to tell the user when to water the plants. The notications can be custom and will be done every few minutes for demo purposes
+// - Part done - Add in prompts to tell the user when to water the plants. The notications can be custom and will be done every few minutes for demo purposes
+// - Get all functions inline if possible as this is cleaner
+
+// currently the reducer to change the status of isWatered is not working properly. It reaches the case statement but doesn't change the value..

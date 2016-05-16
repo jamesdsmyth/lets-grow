@@ -8,12 +8,10 @@ import * as actions from '../actions/action-creators'
 class FoodItemContainerView extends React.Component {
 
     startGrowingClick (foodName) {
-        console.log('click to start growing', foodName)
         this.props.dispatch(actions.startGrowingCreator(foodName));
     }
 
     stopGrowingClick (foodName) {
-        console.log('click to stop growing', foodName);
         this.props.dispatch(actions.stopGrowingCreator(foodName));
     }
 

@@ -23,6 +23,13 @@ export function stopGrowingCreator (foodName) {
 
 export function toBeWatered (foodName) {
     return {
+        type: 'JUST_WATERED',
+        food: foodName
+    }
+}
+
+export function needsWatering (foodName) {
+    return {
         type: 'NEEDS_WATERING',
         food: foodName
     }

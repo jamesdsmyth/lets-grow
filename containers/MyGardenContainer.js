@@ -5,7 +5,6 @@ import { Link } from 'react-router'
 import moment from 'moment'
 
 import * as actions from '../actions/action-creators'
-import NotificationContainer from './NotificationContainer'
 
 class MyGardenContainerView extends React.Component {
     constructor (props) {
@@ -32,18 +31,9 @@ class MyGardenContainerView extends React.Component {
         this.props.dispatch(actions.stopGrowingCreator(foodName));
     }
 
-    toWater (foodName) {
+    waterClick (foodName) {
         console.log(foodName, 'needs to be watered');
-        this.props.dispatch(actions.toBeWatered(foodName));
-    }
-
-    ccc (diff, whenToWater, foodName) {
-        if(diff > whenToWater) {
-            console.log('need to water this plant right now');
-            // need to call a reducer that says the isWtered = false;
-            // this.toWater(AllFood[item].name);
-            this.props.dispatch(actions.toBeWatered(foodName));
-        }
+        // this.props.dispatch(actions.toBeWatered(foodName));
     }
 
     render () {
@@ -55,23 +45,13 @@ class MyGardenContainerView extends React.Component {
 
             if(AllFood[item].isGrowing === true) {
 
+                console.log(AllFood[item].startedGrowing);
+
                 somethingIsgrowing = true;
 
                 var startTime = AllFood[item].startedGrowing;
                 var diff = moment.duration(moment().diff(startTime));
                 var whenToWater = AllFood[item].whenToWater * (1000 * 10); // this equates to a minute if AllFood[item].whenToWater is '1'.
-                // console.log(diff);
-                // if((diff > whenToWater) && (AllFood[item].isWatered == false)) {
-
-
-
-
-                // this.ccc(diff, whenToWater, foodName); //this is causing an error at the moment.
-
-
-
-
-
                 var readableDiff = diff.humanize();
                 var formattedDate = moment(startTime).format("h:mma, dddd MMMM Do");
 
@@ -82,7 +62,11 @@ class MyGardenContainerView extends React.Component {
                             </div>
                             <p><span>Planted: </span>{formattedDate}.</p>
                             <p>This item has been growing for {readableDiff}.</p>
+
+                            <button type="click" className="water-me button" onClick={() => this.waterClick(AllFood[item].name)}>Water me!</button>
+
                             {AllFood[item].isWatered == false ? <p>BRESH</p> : ''}
+
                             <button type="click" className="stop-growing button" onClick={() => this.stopGrowingClick(AllFood[item].name)}>Stop growing</button>
                         </li>
             }
@@ -94,7 +78,6 @@ class MyGardenContainerView extends React.Component {
                 <h1>My Garden</h1>
                 {!somethingIsgrowing ? <p className="intro">You currently do not have any plants growing</p> : null}
                 {somethingIsgrowing ? <ul className="currently-growing">{touchedFoodList}</ul> : null}
-                <NotificationContainer />
             </div>
         )
     }

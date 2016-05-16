@@ -11,6 +11,7 @@ var FoodReducer = (state = Data.food, action) => {
             newState[foodItem] = {
                 ...state[foodItem],
                 startedGrowing: action.time,
+                lastWatered: action.time,
                 isGrowing: true,
                 isWatered: true
             }
@@ -26,7 +27,17 @@ var FoodReducer = (state = Data.food, action) => {
                 isWatered: false
             }
 
-            return newState
+            return newState;
+            break;
+
+        case 'JUST_WATERED':
+            newState[foodItem] = {
+                ...state[foodItem],
+                lastWatered: action.time,
+                isWatered: true
+            }
+
+            return newState;
             break;
 
         case 'NEEDS_WATERING':
