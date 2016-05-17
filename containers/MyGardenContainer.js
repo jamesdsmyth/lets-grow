@@ -15,8 +15,7 @@ class MyGardenContainerView extends React.Component {
     }
 
     tick () {
-        this.setState({ timer: this.state.timer + 1000 })
-        console.log(this.state.timer);
+        this.setState({ timer: this.state.timer + 1000 });
     }
 
     componentDidMount () {
@@ -32,8 +31,7 @@ class MyGardenContainerView extends React.Component {
     }
 
     waterClick (foodName) {
-        console.log(foodName, 'needs to be watered');
-        // this.props.dispatch(actions.toBeWatered(foodName));
+        this.props.dispatch(actions.justWatered(foodName));
     }
 
     render () {
@@ -41,21 +39,19 @@ class MyGardenContainerView extends React.Component {
         var AllFood = this.props.AllFood;
 
         // getting all food items that have started growing.
-        var touchedFoodList = Object.keys(AllFood).map(function (item) {
+        var touchedFoodList = Object.keys(AllFood).map(function (item, i) {
 
             if(AllFood[item].isGrowing === true) {
-
-                console.log(AllFood[item].startedGrowing);
 
                 somethingIsgrowing = true;
 
                 var startTime = AllFood[item].startedGrowing;
                 var diff = moment.duration(moment().diff(startTime));
-                var whenToWater = AllFood[item].whenToWater * (1000 * 10); // this equates to a minute if AllFood[item].whenToWater is '1'.
+                var whenToWater = AllFood[item].whenToWater * (1000 * 5); // this equates to a minute if AllFood[item].whenToWater is '1'.
                 var readableDiff = diff.humanize();
                 var formattedDate = moment(startTime).format("h:mma, dddd MMMM Do");
 
-                return <li key={AllFood[item].name}>
+                return <li key={i}>
                             <div className="food-header">
                                 <h2>{AllFood[item].name}</h2>
                                 <img src={AllFood[item].backgroundImage} alt={AllFood[item].name} />
@@ -63,11 +59,8 @@ class MyGardenContainerView extends React.Component {
                             <p><span>Planted: </span>{formattedDate}.</p>
                             <p>This item has been growing for {readableDiff}.</p>
 
-                            <button type="click" className="water-me button" onClick={() => this.waterClick(AllFood[item].name)}>Water me!</button>
-
-                            {AllFood[item].isWatered == false ? <p>BRESH</p> : ''}
-
                             <button type="click" className="stop-growing button" onClick={() => this.stopGrowingClick(AllFood[item].name)}>Stop growing</button>
+                            {AllFood[item].isWatered == false ? <button type="click" className="water-me button" onClick={() => this.waterClick(AllFood[item].name)}>Water me!</button> : null}
                         </li>
             }
 

@@ -1,4 +1,5 @@
 @import "./_colors.scss";
+@import "./_mixins.scss";
 @import "./reset.scss";
 
 html {
@@ -9,7 +10,7 @@ html {
     box-sizing: border-box;
     animation-iteration-count: infinite;
     animation-name: backgroundColors;
-    animation-duration: 60s;
+    animation-duration: 120s;
 }
 
 @keyframes backgroundColors {
@@ -134,7 +135,6 @@ html {
     h3 {
         font-size: 1.6em;
         width: 100%;
-        text-align: center;
         display: block;
         margin: 25px 0 15px;
     }
@@ -159,9 +159,10 @@ html {
         font-size: 1em;
         border: 0;
         cursor: pointer;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         border-bottom: 1px solid $grey-strike;
         border-right: 1px solid $grey-strike;
+        @include border-radius(5px);
 
         &.grow {
             background: $grow-button;
@@ -169,6 +170,12 @@ html {
 
         &.stop-growing {
             background: $stop-grow-button;
+            color: $white;
+            margin-right: 15px;
+        }
+
+        &.water-me {
+            background: $water-button;
             color: $white;
         }
     }
@@ -280,9 +287,9 @@ html {
                 margin: 0 20px 20px 0;
                 box-sizing: border-box;
                 color: $white;
-                border-radius: 50px;
                 line-height: 44px;
                 position: relative;
+                @include border-radius(50px);
 
                 span {
                     width: 44px;
@@ -318,7 +325,7 @@ html {
             margin-bottom: 30px;
             float: left;
 
-            &:nth-child(3n+3) {
+            &:nth-child(even) {
                 margin-right: 0;
             }
 
@@ -349,6 +356,55 @@ html {
 
             .button {
                 margin-top: 15px;
+            }
+        }
+    }
+
+    .notifications {
+        background: green;
+        position: fixed;
+        right: 6px;
+        top: 6px;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        opacity: 0;
+        @include border-radius(50px);
+
+        &.action-required {
+            background: red;
+            opacity: 1;
+            height: 44px;
+            width: 44px;
+            transition: all 1s ease-out;
+        }
+
+        .exclaimation {
+            position: absolute;
+            display: block;
+            top: 7px;
+            left: 16px;
+            color: $white;
+            font-size: 2em;
+        }
+
+        .notification-items {
+            display: none;
+        }
+
+        &:hover {
+            height: 200px;
+            width: 400px;
+            background: $white;
+            transition: all 0.5s ease-out;
+            @include border-radius(5px);
+
+            .exclaimation {
+                display: none;
+            }
+
+            .notification-items {
+                display: block;
             }
         }
     }
@@ -408,7 +464,7 @@ html {
         .currently-growing {
 
             li {
-                width: 32%;
+                width: 49%;
                 margin-right: 2%;
             }
         }

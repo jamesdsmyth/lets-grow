@@ -9,10 +9,14 @@ export default React.createClass({
                 <header className="main-header">
                     <ul id="main-navigation">
                         <li>
-                            <Link to="/food" activeClassName="active">Food</Link>
+                            <Link to="/food" activeClassName="active">
+                                Food
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/my-garden" activeClassName="active">My Garden</Link>
+                            <Link to="/my-garden" activeClassName="active">
+                                My Garden
+                            </Link>
                         </li>
                     </ul>
                 </header>

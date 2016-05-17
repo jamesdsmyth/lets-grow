@@ -1,7 +1,6 @@
 import Data from '../store/Data'
 
 var FoodReducer = (state = Data.food, action) => {
-    console.log('reducer called with state ', state , ' and action ', action);
 
     var foodItem = action.food;
     let newState = Object.assign({}, state); // creating a new state using the Object.assign method
@@ -15,7 +14,6 @@ var FoodReducer = (state = Data.food, action) => {
                 isGrowing: true,
                 isWatered: true
             }
-
             return newState;
             break;
 
@@ -30,20 +28,20 @@ var FoodReducer = (state = Data.food, action) => {
             return newState;
             break;
 
-        case 'JUST_WATERED':
+        case 'NEEDS_WATERING':
             newState[foodItem] = {
                 ...state[foodItem],
-                lastWatered: action.time,
-                isWatered: true
+                isWatered: false
             }
 
             return newState;
             break;
 
-        case 'NEEDS_WATERING':
+        case 'JUST_WATERED':
             newState[foodItem] = {
                 ...state[foodItem],
-                isWatered: false
+                lastWatered: action.time,
+                isWatered: true
             }
 
             return newState;

@@ -46,5 +46,4 @@ render((
 // - Done - Add real fruit and veg data
 // - Part done - Add in prompts to tell the user when to water the plants. The notications can be custom and will be done every few minutes for demo purposes
 // - Get all functions inline if possible as this is cleaner
-
-// currently the reducer to change the status of isWatered is not working properly. It reaches the case statement but doesn't change the value..
+// - Add hover states on the buttons
