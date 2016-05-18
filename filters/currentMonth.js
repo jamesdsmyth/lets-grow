@@ -6,9 +6,6 @@ var currentMonth = (months) => {
     var currentDate = new Date();
     var currentMonth = currentDate.getMonth();
 
-    console.log(currentMonth);
-    alert('yup')
-
     for(var i = 0; i < months.length; i++) {
         if(currentMonth == months[i]) {
             monthClass = 'in-season'

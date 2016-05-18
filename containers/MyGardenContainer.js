@@ -50,6 +50,7 @@ class MyGardenContainerView extends React.Component {
                 var whenToWater = AllFood[item].whenToWater * (1000 * 5); // this equates to a minute if AllFood[item].whenToWater is '1'.
                 var readableDiff = diff.humanize();
                 var formattedDate = moment(startTime).format("h:mma, dddd MMMM Do");
+                var formattedLastWateredDate =  moment(AllFood[item].lastWatered).format("h:mma, dddd MMMM Do");
 
                 return <li key={i}>
                             <div className="food-header">
@@ -58,6 +59,7 @@ class MyGardenContainerView extends React.Component {
                             </div>
                             <p><span>Planted: </span>{formattedDate}.</p>
                             <p>This item has been growing for {readableDiff}.</p>
+                            <p>The last time you watered your {AllFood[item].name} was on {formattedLastWateredDate}</p>
 
                             <button type="click" className="stop-growing button" onClick={() => this.stopGrowingClick(AllFood[item].name)}>Stop growing</button>
                             {AllFood[item].isWatered == false ? <button type="click" className="water-me button" onClick={() => this.waterClick(AllFood[item].name)}>Water me!</button> : null}

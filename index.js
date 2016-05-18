@@ -10,7 +10,6 @@ import App from './views/App'
 import MyGardenContainer from './containers/MyGardenContainer'
 import FoodContainer from './containers/FoodContainer'
 import FoodItemContainer from './containers/FoodItemContainer'
-import NotificationContainer from './containers/NotificationContainer'
 import Store from './reducers/CombinedReducer'
 
 render((
@@ -42,8 +41,7 @@ render((
 // - Done - Add moment.js and have readable times being displayed. Added the package, now getting to format the dates
 // - Done - When clicking 'stop growing' within garden, this should refresh the render and remove the item. Could tap into the interval?
 // - Done - Color scheme and theme needs to be thought out and implemented
-// - Add dropdown to list what is in season and what is not in season
 // - Done - Add real fruit and veg data
-// - Part done - Add in prompts to tell the user when to water the plants. The notications can be custom and will be done every few minutes for demo purposes
-// - Get all functions inline if possible as this is cleaner
-// - Add hover states on the buttons
+// - Done - Add in prompts to tell the user when to water the plants. The notications can be custom and will be done every few minutes for demo purposes
+// - Done - Add hover states on the buttons
+// - Add dropdown to list what is in season and what is not in season

@@ -55,19 +55,19 @@ class NotificationContainerView extends React.Component {
 
             if((AllFood[item].isGrowing === true) && (AllFood[item].isWatered !== true)) {
                 notificationClasses = 'notifications action-required';
-                return <div key={i}>
-                        <p key={i}>{AllFood[item].name}</p>
+                return <li key={i}>
+                        <span key={i}>{AllFood[item].name}</span>
                         <button type="click" className="water-me button" onClick={() => this.waterClick(AllFood[item].name)}>Water me!</button>
-                    </div>
+                    </li>
             }
         }.bind(this));
 
         return (
             <section className={notificationClasses}>
                 <span className="exclaimation">!</span>
-                <div className="notification-items">
+                <ul className="notification-items">
                     {toWater}
-                </div>
+                </ul>
             </section>
         )
     }

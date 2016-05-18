@@ -10,7 +10,7 @@ html {
     box-sizing: border-box;
     animation-iteration-count: infinite;
     animation-name: backgroundColors;
-    animation-duration: 120s;
+    animation-duration: 180s;
 }
 
 @keyframes backgroundColors {
@@ -19,19 +19,19 @@ html {
     }
 
     20% {
-        background: $backgroundOrange;
+        background: $background-orange;
     }
 
     40% {
-        background: $backgroundYellow; //yellow
+        background: $background-yellow; //yellow
     }
 
     60% {
-        background: $backgroundGreen; // light green
+        background: $background-green; // light green
     }
 
     80% {
-        background: $backgroundBlue; // light blue
+        background: $background-blue; // light blue
     }
 }
 
@@ -163,6 +163,10 @@ html {
         border-bottom: 1px solid $grey-strike;
         border-right: 1px solid $grey-strike;
         @include border-radius(5px);
+
+        &:hover {
+            background: $hover-button !important;
+        }
 
         &.grow {
             background: $grow-button;
@@ -361,8 +365,7 @@ html {
     }
 
     .notifications {
-        background: green;
-        position: fixed;
+        position: absolute;
         right: 6px;
         top: 6px;
         height: 0;
@@ -372,18 +375,18 @@ html {
         @include border-radius(50px);
 
         &.action-required {
-            background: red;
+            background: $warning-yellow;
             opacity: 1;
             height: 44px;
             width: 44px;
-            transition: all 1s ease-out;
+            transition: all 0.25s ease-out;
         }
 
         .exclaimation {
             position: absolute;
             display: block;
             top: 7px;
-            left: 16px;
+            left: 14px;
             color: $white;
             font-size: 2em;
         }
@@ -393,10 +396,11 @@ html {
         }
 
         &:hover {
-            height: 200px;
-            width: 400px;
-            background: $white;
-            transition: all 0.5s ease-out;
+            height: auto;
+            width: 200px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            border: 1px solid $grey;
             @include border-radius(5px);
 
             .exclaimation {
@@ -405,6 +409,15 @@ html {
 
             .notification-items {
                 display: block;
+
+                li {
+
+                    span {
+                        text-transform: capitalize;
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                }
             }
         }
     }
