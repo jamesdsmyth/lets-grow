@@ -23,7 +23,7 @@ Quick breakdown of the main files and how `react-router` and `react-redux` live 
   * `FoodItem.js` - a presentational component that takes parameters and displays the correct food item
 + `action-creators.js` - These functions create an object ready to be dispatched to the reducers
 + `currentMonth.js` - Function that returns the correct class regarding whether that food is in season or not. This is linked to the calendar visual on the foodItem page
-+ `NotificationContainer.js` - This gives you notifications when to water your plants. Currently these notifications are sped to so the prompts happen much faster than once a day!
++ `NotificationContainer.js` - This gives you notifications when to water your plants. Currently these notifications are sped up so the prompts happen much faster than once a day!
 
 ### Tips
 

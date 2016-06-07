@@ -1,7 +1,7 @@
 {
   "name": "lets-grow",
   "version": "1.0.0",
-  "description": "An app being built using React listing how to grow a selection of fruit and vegetables in the garden",
+  "description": "An app built using React listing how to grow a selection of fruit and vegetables in the garden",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --content-base . --history-api-fallback"

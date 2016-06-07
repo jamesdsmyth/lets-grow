@@ -6,6 +6,6 @@ var Reducer = combineReducers({
     FoodState: FoodReducer
 })
 
-let Store = createStore(Reducer);
+let Store = createStore(Reducer)
 
 export default Store

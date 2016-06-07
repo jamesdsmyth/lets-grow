@@ -19,11 +19,11 @@ html {
     }
 
     20% {
-        background: $background-orange;
+        background: $background-orange; // orange
     }
 
     40% {
-        background: $background-yellow; //yellow
+        background: $background-yellow; // yellow
     }
 
     60% {
@@ -35,7 +35,15 @@ html {
     }
 }
 
+@keyframes ballAnimation {
+
+
+
+}
+
 #lets-grow {
+    z-index: 2;
+    position: relative;
 
     a {
         text-decoration: none;
@@ -366,8 +374,8 @@ html {
 
     .notifications {
         position: absolute;
-        right: 6px;
-        top: 6px;
+        right: 28px;
+        top: 28px;
         height: 0;
         width: 0;
         overflow: hidden;
@@ -379,6 +387,8 @@ html {
             opacity: 1;
             height: 44px;
             width: 44px;
+            right: 6px;
+            top: 6px;
             transition: all 0.25s ease-out;
         }
 
@@ -392,7 +402,8 @@ html {
         }
 
         .notification-items {
-            display: none;
+            opacity: 0;
+            transition: all 1s east-out;
         }
 
         &:hover {
@@ -408,7 +419,7 @@ html {
             }
 
             .notification-items {
-                display: block;
+                opacity: 1;
 
                 li {
 
@@ -492,3 +503,21 @@ html {
         }
     }
 }
+
+// #ball {
+//     z-index: 1;
+//     position: absolute;
+//     width: 25vw;
+//     height: 25vw;
+//     background: yellow;
+//     -webkit-filter: blur(100px);
+//     -moz-filter: blur(100px);
+//     -o-filter: blur(100px);
+//     -ms-filter: blur(100px);
+//     filter: blur(100px);
+//     @include border-radius(100px);
+//     transform: translate3d(0, 0, 0);
+//     animation-iteration-count: infinite;
+//     animation-name: ballAnimation;
+//     animation-duration: 60s;
+// }

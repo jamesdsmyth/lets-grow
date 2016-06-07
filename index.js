@@ -44,4 +44,6 @@ render((
 // - Done - Add real fruit and veg data
 // - Done - Add in prompts to tell the user when to water the plants. The notications can be custom and will be done every few minutes for demo purposes
 // - Done - Add hover states on the buttons
+// - Add in screenshots
+// - Make fully mobile friendly, needs to fix a few width bugs
 // - Add dropdown to list what is in season and what is not in season
