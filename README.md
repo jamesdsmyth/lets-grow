@@ -1,7 +1,7 @@
 Lets grow
 =====================
 
-An app being built using React listing how to grow a selection of fruit and vegetables in the garden.
+Lets grow is an app React, Redux and Webpack that lists how to grow a selection of fruit and vegetables in the garden. It also gives you warnings when to water the growing plants. Please note the warnings are currently set at every 10 seconds but are configurable!
 
 ### How to run
 
