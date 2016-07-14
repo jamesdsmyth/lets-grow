@@ -7,8 +7,8 @@ Lets grow is a React app that I have used primarily to get my head around React 
 
 ### How to run
 
-1. `git clone` repo
-2. `npm install` to get the node_modules
+1. `git clone` the repo
+2. `npm install` to get the node_modules folder
 3. `npm start` to initialize the app
 4. visit [http://localhost:8080/](http://localhost:8080/)
 
@@ -26,20 +26,6 @@ Quick breakdown of the main files and how `react-router` and `react-redux` live 
 + `action-creators.js` - These functions create an object ready to be dispatched to the reducers
 + `currentMonth.js` - Function that returns the correct class regarding whether that food is in season or not. This is linked to the calendar visual on the foodItem page
 + `NotificationContainer.js` - This gives you notifications when to water your plants. Currently these notifications are sped up so the prompts happen much faster than once a day!
-
-### Tips
-
-To use the es6 object spread especially when returning the state, you need to include the following in your package.json file. Find out more - [babel object rest spread] (https://babeljs.io/docs/usage/babelrc/)
-
-But first `npm install babel-plugin-transform-object-rest-spread`
-
-then in the `package.json` add an entry for `babel`
-
-  `"babel": {
-    "plugins": [
-      "transform-object-rest-spread"
-    ]
-  }`
 
 ### Future
 
