@@ -7,11 +7,19 @@ import FoodItem from '../views/FoodItem'
 
 describe('FoodItem component', () => {
 
+    let wrapper = null;
+
+    beforeEach( () => {
+      wrapper = mount(<FoodItem />);
+    });
+
     it('FoodItem should exist', () => {
-        expect(shallow(<FoodItem />)).toBeTruthy();
+        expect(wrapper.length).toEqual(1);
     });
 
     it('FoodItem should contain <description />', () => {
-        expect(mount(<FoodItem />).find('.description')).toBeTruthy();
+        let desc = wrapper.find('.description');
+        console.log(desc);
+        expect(desc.length).toEqual(1);
     });
 });
