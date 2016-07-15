@@ -14,7 +14,7 @@ Lets grow is a React app that I have used primarily to get my head around React 
 
 ### Hierarchy
 
-Quick breakdown of the main files and how `react-router` and `react-redux` live within it.
+Quick breakdown of the main files and how `React router` and `Redux` live within it.
 
 + `index.html` - contains the html markup that the application will be contained within. In this case `<main id="lets-grow" />`
 + `index.js` - contains initialization of the react-router
@@ -26,6 +26,12 @@ Quick breakdown of the main files and how `react-router` and `react-redux` live 
 + `action-creators.js` - These functions create an object ready to be dispatched to the reducers
 + `currentMonth.js` - Function that returns the correct class regarding whether that food is in season or not. This is linked to the calendar visual on the foodItem page
 + `NotificationContainer.js` - This gives you notifications when to water your plants. Currently these notifications are sped up so the prompts happen much faster than once a day!
+
+### Testing
+
++ `__tests__` folder - This folder contains all my tests. I am using Jest with Enzyme for my testing suite.
+
+ To run the tests just `npm test`
 
 ### Future
 

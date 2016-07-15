@@ -12,6 +12,7 @@ class FoodItem extends React.Component {
         var growClick = this.props.growClick; // passing the click event from FoodItemContainer
         var stopGrowClick = this.props.stopGrowClick;
         var currentMonth = moment().month() + 1;
+
         // map function to loop through each object item and get the key and value.
         var i = 0;
         var calendarMonths = Object.keys(FoodItem.monthsActive).map(function(month) {
@@ -65,8 +66,8 @@ class FoodItem extends React.Component {
                     </div>
                     <div className="description">
                         <div className="inner">
-                            {!FoodItem.isGrowing ? <button type="click" className="grow button" onClick={growClick}>Grow!</button> : null}
-                            {FoodItem.isGrowing ? <button type="click" className="stop-growing button" onClick={stopGrowClick}>Stop growing</button> : null}
+                            {!FoodItem.isGrowing ? <button type="click" className="grow button" onClick={growClick}>Grow!</button>
+                            : <button type="click" className="stop-growing button" onClick={stopGrowClick}>Stop growing</button>}
                             {FoodItem.isGrowing ? <p>Started growing at {moment(FoodItem.startedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
                             {!FoodItem.isGrowing && FoodItem.startedGrowing ? <p>Stopped growing at {moment(FoodItem.stoppedGrowing).format("h:mma, dddd MMMM Do")}</p> : null}
                             <p>Plant type: {FoodItem.type}</p>
