@@ -29,7 +29,7 @@ Quick breakdown of the main files and how `React router` and `Redux` live within
 
 ### Testing
 
-+ `__tests__` folder - This folder contains all my tests. I am using Jest with Enzyme for my testing suite.
++ `__tests__` folder - This folder will contain my tests although there are not many there at the moment...I am using Jest with Enzyme for my testing suite.
 
  To run the tests just `npm test`
 
